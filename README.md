@@ -30,5 +30,5 @@ The login credentials for this system are under high security and nobody will ha
 # Team Members
 - Ali Fetanat (40158208)
 - Michael Hong (40209068) -> Back-end developer.
-- Kade Keating (#40166656)
+- Kade Keating (40166656)
 - Daniel Wegrzyn (40178262)
