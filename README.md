@@ -33,5 +33,5 @@ Using React for front-end, Django for back-end and SQL for database.
 # Team Members
 - Ali Fetanat (40158208)
 - Michael Hong (40209068) -> Back-end developer.
-- Kade Keating (40166656)
+- Kade Keating (40166656) -> Full-stack developer.
 - Daniel Wegrzyn (40178262) -> Front-end developer. 
