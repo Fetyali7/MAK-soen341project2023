@@ -35,3 +35,4 @@ Using React for front-end, Django for back-end and SQL for database.
 - Michael Hong (40209068) -> Back-end developer.
 - Kade Keating (40166656) -> Full-stack developer.
 - Daniel Wegrzyn (40178262) -> Front-end developer. 
+- Yeprem Antranik (40204291) -> Front-end developer
