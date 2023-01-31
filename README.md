@@ -31,9 +31,10 @@ The login credentials for this system are under high security and nobody will ha
 Using React for front-end, Django for back-end and SQL for database.
 
 # Team Members
-- Ali Fetanat (40158208) -> Full-Stack developer.
+- Ali Fetanat (40158208): @Fetyali7 -> Full-Stack developer.
 - Michael Hong (40209068) -> Back-end developer.
 - Kade Keating (40166656) -> Full-stack developer.
 - Daniel Wegrzyn (40178262) -> Front-end developer. 
 - Yeprem Antranik (40204291) -> Front-end developer
 - Rihazul Islam  (40212505)  -> Back-end developer.
+# Roles
