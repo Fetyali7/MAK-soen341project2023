@@ -1,4 +1,4 @@
-# [JobHunt] 341-Project
+# [JobHunt](#) 341-Project
 # Description
 This project aims to provide a convenient and efficient way for job-seeking students to showcase their portfolios and for employers to post job opportunities. The platform allows for both parties to find and apply for job opportunities and candidates respectively, all from the convenience of a PC or mobile device with internet access.
 
