@@ -28,7 +28,9 @@ The project is available online, you can access via web browser by visiting the 
 The login credentials for this system are under high security and nobody will have the capacity to crack it easily.
 
 # Project Approach and Technology
-Using React for front-end, Django for back-end and SQL for database.
+|Front-end| Back-end | Database |
+| :-: | :-: | :-: |
+|React|Django|SQL|
 
 # Team Members
 | Names | Id | Git Username | Role |
