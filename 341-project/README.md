@@ -1,4 +1,4 @@
-### After cloning the repository
+# After cloning the repository
 ## If you get: 'sh: 1: react-scripts: not found'
 Open a new terminal
 cd 341-project
