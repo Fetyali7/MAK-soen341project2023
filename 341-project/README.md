@@ -1,9 +1,9 @@
 # After cloning the repository
 ## If you get: 'sh: 1: react-scripts: not found'
-Open a new terminal
-cd 341-project
-npm install
-npm run start           
+Open a new terminal\
+cd 341-project\
+npm install\
+npm run start\           
 
 # Getting Started with Create React App
 
