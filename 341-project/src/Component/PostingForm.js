@@ -8,28 +8,29 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
     const [location, setLocation] = useState("")
     
     const handleCompanyName = (e) => {
-        setCompanyName(e.target.companyName);
+        setCompanyName(e.target.value);
     }
     const handlePhoneNumber = (e) => {
-        setPhoneNumber(e.target.phoneNumber);
+        setPhoneNumber(e.target.value);
         
     }
     const handleEmployer = (e) => {
-        setEmployer(e.target.employer);
+        setEmployer(e.target.value);
         
     }
     const handleJobDescription = (e) => {
-        setJobDescription(e.target.jobDescription);
+        setJobDescription(e.target.value);
         
     }
     const handleLocation = (e) => {
-        setLocation(e.target.location);
+        setLocation(e.target.value);
         
     }
     const handlePostings = () =>  {
         setPostingsList([...postingsList, {companyName:companyName, phoneNumber:phoneNumber,
                                          employer:employer,jobDescription:jobDescription,
                                          location:location}]);
+        console.log(postingsList);
     }
 
   return (
@@ -44,7 +45,24 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
         <input placeholder="Job Description" value={jobDescription} onChange={handleJobDescription}></input>
         <label>Location</label>
         <input placeholder="Location" value={location} onChange={handleLocation}></input>
-        <button onClick={handlePostings()}> Add </button>
+        <button onClick={handlePostings}> Add </button>
+        <div>
+            {postingsList.length > 0 ? 
+            <div>
+                    {postingsList.map((value) => 
+                    <div className='postings card'>
+                        <div>{value.companyName}</div>
+                        <div>{value.phoneNumber}</div>
+                        <div>{value.employer}</div>
+                        <div>{value.jobDescription}</div>
+                        <div>{value.location}</div>
+                        {/* <span onClick={() => deleteManga(value.title)} className='delete-button'><button> X</button></span> */}
+                    </div>)
+                    }
+            </div>
+                : (<div> List is empty </div>)
+            }
+        </div>
     </div>
   )
 }

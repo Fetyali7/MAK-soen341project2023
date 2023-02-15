@@ -13,7 +13,7 @@ function App() {
         <Navbar changeTab={(changeTab) => setCurrentTab(changeTab)}></Navbar>
         <div>hello</div>
         {currentTab === "Home" ? <></> : <></>}
-        {/* {currentTab === "Posting" ? <PostingForm postingsList={postingsList} setPostingsList={setPostingsList}></PostingForm> : <></>} */}
+        {currentTab === "Posting" ? <PostingForm postingsList={postingsList} setPostingsList={setPostingsList}></PostingForm> : <></>}
         <Footer></Footer>
     </div>
   );
