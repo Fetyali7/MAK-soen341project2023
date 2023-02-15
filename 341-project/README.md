@@ -3,7 +3,7 @@
 Open a new terminal\
 cd 341-project\
 npm install\
-npm run start\           
+npm run start     
 
 # Getting Started with Create React App
 
