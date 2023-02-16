@@ -6,7 +6,7 @@ export const Footer = () => {
         <div class="footer-menu">
             <ul class="f-menu">
                 <li><a href="https://github.com/mycoal2" target="_blank">Michael Hong</a></li>
-                <li><a href="/" target="_blank">Name</a></li>
+                <li><a href="https://github.com/Fetyali7" target="_blank">Ali Fetanat</a></li>
             </ul>
             <ul>
                 <li><a href="/" target="_blank">Name</a></li>

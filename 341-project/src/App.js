@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './App.css';
+import {Findingpage} from './Component/Findingpage';
 import { Footer } from './Component/Footer';
+import {Homepage} from './Component/Homepage';
 import { Navbar } from './Component/Navbar';
 import { PostingForm } from './Component/PostingForm';
 
@@ -11,9 +13,9 @@ function App() {
   return (
     <div className="App">
         <Navbar changeTab={(changeTab) => setCurrentTab(changeTab)}></Navbar>
-        <div>hello</div>
-        {currentTab === "Home" ? <></> : <></>}
+        {currentTab === "Home" ? <Homepage Homepage={Homepage}></Homepage> : <></>}
         {currentTab === "Posting" ? <PostingForm postingsList={postingsList} setPostingsList={setPostingsList}></PostingForm> : <></>}
+        {currentTab === "Finding" ? <Findingpage Findingpage={Findingpage}></Findingpage> : <></>}
         <Footer></Footer>
     </div>
   );

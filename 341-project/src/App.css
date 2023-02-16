@@ -4,31 +4,44 @@ body {
 main {
   margin: 16px;
 }
-.navbar {
+/* .navbar {
   display: flex;
-  align-items: center;
+  align-items: center; 
   
   background: rgb(141, 37, 106);
   color: white;
   font-family: Helvetica;
   font-weight: 300;
-}
-.navTitle {
-  margin-right: auto;
+ 
+} */
+/* .navTitle{
+  
   font-size: 150%;
-}
-.navItem {
-  padding: 20px 30px;
-  cursor: pointer;
-  vertical-align: middle;
-}
+  padding-left: 5rem;
+  padding-top:0.5rem;
+} */
+/* .navItem {
+  padding: 15px 15px;
+  
+  
+  border-radius: 8px;
+  color:#fff;
+  background-color:rgb(237, 176, 55);
+  border: 3px solid rgb(233, 239, 169);
+  font-size:1.1em;
+  
+  margin:1em;
+  
+  right:0;
+} */
+
 
 footer {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: #6a0d40;
+  background: #201f1f;
   height: auto;
   width: 100vw;
   color: #fff;
@@ -66,4 +79,35 @@ footer {
 
 .footer-menu ul li a:hover {
   color: #27bcda;
+}
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+background-color: gold;
+color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+float: right;
 }
