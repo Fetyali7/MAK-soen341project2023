@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import './App.css';
-import {Findingpage} from './Component/Findingpage';
+
+import { Findingpage, Footer, Homepage, Navbar, PostingForm, Signup} from './Component'
+/*import {Findingpage} from './Component/Findingpage';
 import { Footer } from './Component/Footer';
 import {Homepage} from './Component/Homepage';
 import { Navbar } from './Component/Navbar';
 import { PostingForm } from './Component/PostingForm';
-import { Signup } from './Component/Signup';
+import { Signup } from './Component/Signup';*/
 
 function App() {
   const [postingsList, setPostingsList] = useState([]);

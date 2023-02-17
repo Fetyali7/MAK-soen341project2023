@@ -5,3 +5,5 @@ export const Homepage = ({Homepage}) =>{
     <h1>Welcome to JobHunt</h1>
   )
 }
+
+export default Homepage 

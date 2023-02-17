@@ -1,4 +1,5 @@
 import React from 'react'
+import './navbar.css'
 
 export const Navbar = ({changeTab}) => {
   return (
@@ -23,3 +24,5 @@ export const Navbar = ({changeTab}) => {
   </div>
   )
 }
+
+export default Navbar

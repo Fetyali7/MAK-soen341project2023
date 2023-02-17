@@ -65,3 +65,5 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
     </div>
   )
 }
+
+export default PostingForm
