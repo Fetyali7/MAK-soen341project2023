@@ -5,6 +5,7 @@ import { Footer } from './Component/Footer';
 import {Homepage} from './Component/Homepage';
 import { Navbar } from './Component/Navbar';
 import { PostingForm } from './Component/PostingForm';
+import { Signup } from './Component/Signup';
 
 function App() {
   const [postingsList, setPostingsList] = useState([]);
@@ -16,6 +17,7 @@ function App() {
         {currentTab === "Home" ? <Homepage Homepage={Homepage}></Homepage> : <></>}
         {currentTab === "Posting" ? <PostingForm postingsList={postingsList} setPostingsList={setPostingsList}></PostingForm> : <></>}
         {currentTab === "Finding" ? <Findingpage Findingpage={Findingpage}></Findingpage> : <></>}
+        {currentTab === "Signup" ? <Signup></Signup> : <></>}
         <Footer></Footer>
     </div>
   );

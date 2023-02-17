@@ -56,7 +56,6 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
                         <div>{value.employer}</div>
                         <div>{value.jobDescription}</div>
                         <div>{value.location}</div>
-                        {/* <span onClick={() => deleteManga(value.title)} className='delete-button'><button> X</button></span> */}
                     </div>)
                     }
             </div>
