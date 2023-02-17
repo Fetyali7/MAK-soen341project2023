@@ -11,10 +11,10 @@ export const Navbar = ({changeTab}) => {
     // </div>
     <div className='Navbar__Background'>
       <div class="topnav">
-      <a class="active" onClick={()=> {changeTab("Home")}}>JobHunt</a>
-      <a  onClick={()=> {changeTab("Finding")}}>FindJob</a>
-      <a  onClick={()=> {changeTab("Posting")}}>PostJob</a>
-      <a onClick={()=> {changeTab("Search")}}>Search</a>
+      <a href="#Home" class="active" onClick={()=> {changeTab("Home")}}>JobHunt</a>
+      <a href="#Finding" onClick={()=> {changeTab("Finding")}}>FindJob</a>
+      <a href="#PostJob" onClick={()=> {changeTab("Posting")}}>PostJob</a>
+      <a href="#Search" onClick={()=> {changeTab("Search")}}>Search</a>
       <div class="topnav-right">
         <a  onClick={()=> {changeTab("Login")}}>Login</a>
         <a  onClick={()=> {changeTab("Signup")}}>SignUp</a>

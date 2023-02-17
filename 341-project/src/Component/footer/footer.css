@@ -3,7 +3,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: #201f1f;
+    background: var(--color-footer);
     height: auto;
     width: 100vw;
     color: #fff;
@@ -35,10 +35,10 @@
 }
   
 .footer-menu ul li a {
-    color: #cfd2d6;
+    color: var(--color-footer-text);
     text-decoration: none;
 }
   
   .footer-menu ul li a:hover {
-    color: #27bcda;
+    color: var(--color-footer-hover);
 }

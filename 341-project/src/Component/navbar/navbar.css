@@ -14,18 +14,18 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  border-color: var(--color-navbar-links);
+  border-color: var(--color-navbar-border);
   }
   
   /* Change the color of links on hover */
   .topnav a:hover {
-  background-color: rgb(248, 124, 188);
+  background-color: var(--color-navbar-hover);
   color: black;
   }
   
   /* Add a color to the active/current link */
   .topnav a.active {
-  background-color: rgba(28,41,53,255);
+  background-color: var(--color-navbar-active);
   color: white;
   }
   
@@ -37,5 +37,5 @@
   .Navbar__Background{
     padding-top: 20px;
     padding-bottom: 20px;
-    background: rgba(47,66,93,255);
+    background: var(--color-navbar-background);
   }

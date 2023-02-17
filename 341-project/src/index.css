@@ -14,5 +14,12 @@ code {
 
 :root{
   --color-navbar: rgba(56,77,110,255);
-  --color-navbar-links: #630a3b;
+  --color-navbar-border: #27bcda;
+  --color-navbar-hover: rgb(248, 124, 188);
+  --color-navbar-active: rgba(28,41,53,255);
+  --color-navbar-background: rgba(47,66,93,255);
+
+  --color-footer: #201f1f;
+  --color-footer-text: #cfd2d6;
+  --color-footer-hover: #27bcda;
 }
