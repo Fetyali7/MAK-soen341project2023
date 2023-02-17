@@ -12,9 +12,9 @@ export const Navbar = ({changeTab}) => {
     <a class="active" onClick={()=> {changeTab("Home")}}>JobHunt</a>
     <a  onClick={()=> {changeTab("Finding")}}>FindJob</a>
     <a  onClick={()=> {changeTab("Posting")}}>PostJob</a>
-    <a  onClick={()=> {changeTab("Contact")}}>Contact</a>
+    <a onClick={()=> {changeTab("Search")}}>Search</a>
     <div class="topnav-right">
-      <a onClick={()=> {changeTab("Search")}}>Search</a>
+      <a  onClick={()=> {changeTab("Signup")}}>SignUp</a>
       <a onClick={()=> {changeTab("Aboutcompany")}}>About</a>
     </div>
   </div>
