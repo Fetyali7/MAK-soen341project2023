@@ -1,0 +1,184 @@
+.postingform{
+    display: flex;
+    flex-direction: column;
+}
+
+.postingform-content{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: .5rem;
+}
+
+.postingform-content__input {
+    width: 100%;
+    margin: .5rem 0rem;
+    display: flex;
+    flex-direction: column;
+} 
+
+.postingform-content__input input {
+    flex: 2;
+    width: 100%;
+    background: var(--color-navbar);
+    border: 2px solid var(--color-navbar-background);
+    padding: 0 1rem;
+    outline: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 20px;
+    line-height: 35px;
+    color: #fff;
+    border-left: none;
+}
+
+.postingform-content__input label {
+    flex: 0.6;
+    width: 100%;
+    background: var(--color-navbar-active);
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    outline: none;
+    border: 2px solid var(--color-navbar-background);
+    padding: 0 1rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+
+}
+
+.postingform-content__input button {
+    width: 100%;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 35px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    background: var(--color-navbar-hover);
+    border-radius: 5px;
+}
+
+
+.postingform-content__input-company{
+    width: 100%;
+    margin: .5rem 0 .5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.postingform-content__input-phonenumber{
+    width: 100%;
+    margin: .5rem 0 .5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.postingform-content__input-employer {
+    width: 100%;
+    margin: .5rem 0 .5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.postingform-content__input-jobdescription {
+    width: 100%;
+    margin: .5rem 0 .5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.postingform-content__input-location {
+    width: 100%;
+    margin: .5rem 0 .5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.postingform-listing{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.postingcard{
+    padding: 1rem;
+}
+
+.postingcard-companyname{
+    flex: 2;
+    width: 100%;
+    background: var(--color-navbar);
+    padding: 0 1rem;
+    outline: none;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    font-size: 15px;
+    line-height: 30px;
+    color: #fff;
+    border-left: none;
+}
+
+.postingcard-phonenumber{
+    flex: 2;
+    width: 100%;
+    background: var(--color-navbar);
+    padding: 0 1rem;
+    outline: none;
+    font-size: 15px;
+    line-height: 30px;
+    color: #fff;
+    border-left: none;
+}
+
+.postingcard-employer{
+    flex: 2;
+    width: 100%;
+    background: var(--color-navbar);
+    padding: 0 1rem;
+    outline: none;
+    font-size: 15px;
+    line-height: 30px;
+    color: #fff;
+    border-left: none;
+}
+
+.postingcard-jobdescription{
+    flex: 2;
+    width: 100%;
+    background: var(--color-navbar);
+    padding: 0 1rem;
+    outline: none;
+    font-size: 15px;
+    line-height: 30px;
+    color: #fff;
+    border-left: none;
+}
+
+.postingcard-location{
+    flex: 2;
+    width: 100%;
+    background: var(--color-navbar);
+    border-bottom-left-radius: 5px; 
+    border-bottom-right-radius: 5px;
+    padding: 0 1rem;
+    outline: none;
+    font-size: 15px;
+    line-height: 30px;
+    color: #fff;
+    border-left: none;
+}

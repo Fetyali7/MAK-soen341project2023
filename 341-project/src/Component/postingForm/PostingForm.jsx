@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './postingForm.css'
 
 export const PostingForm = ({postingsList, setPostingsList}) => {
     const [companyName, setCompanyName] = useState("")
@@ -34,28 +35,44 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
     }
 
   return (
-    <div>
-        <label>Company Name</label>
-        <input placeholder="Company Name" value={companyName} onChange={handleCompanyName}></input>
-        <label>phoneNumber</label>
-        <input placeholder="514-***-****" value={phoneNumber} onChange={handlePhoneNumber}></input>
-        <label>employer</label>
-        <input placeholder="Employer" value={employer} onChange={handleEmployer}></input>
-        <label>jobDescription</label>
-        <input placeholder="Job Description" value={jobDescription} onChange={handleJobDescription}></input>
-        <label>Location</label>
-        <input placeholder="Location" value={location} onChange={handleLocation}></input>
-        <button onClick={handlePostings}> Add </button>
-        <div>
+    <div className='postingform section__padding'>
+        <div className='postingform-content'>
+            <div className='postingform-content__input'>
+                <div className='postingform-content__input-company'>
+                    <label>Company Name</label>
+                    <input placeholder="Company Name" value={companyName} onChange={handleCompanyName}></input>
+                </div>
+                <div className='postingform-content__input-phonenumber'>
+                    <label>Phone Number</label>
+                    <input placeholder="514-***-****" value={phoneNumber} onChange={handlePhoneNumber}></input>
+                </div>
+                <div className='postingform-content__input-employer'>
+                    <label>Employer</label>
+                    <input placeholder="Employer" value={employer} onChange={handleEmployer}></input>
+                </div>
+                <div className='postingform-content__input-jobdescription'>
+                    <label>Job Description</label>
+                    <input placeholder="Job Description" value={jobDescription} onChange={handleJobDescription}></input>
+                </div>
+                <div className='postingform-content__input-location'>
+                    <label>Location</label>
+                    <input placeholder="Location" value={location} onChange={handleLocation}></input>
+                </div>
+                <div className='postingform-content__input-button'>
+                    <button onClick={handlePostings}> Add </button>
+                </div>
+            </div>
+        </div>
+        <div className='postingform-listing'>
             {postingsList.length > 0 ? 
             <div>
                     {postingsList.map((value) => 
-                    <div className='postings card'>
-                        <div>{value.companyName}</div>
-                        <div>{value.phoneNumber}</div>
-                        <div>{value.employer}</div>
-                        <div>{value.jobDescription}</div>
-                        <div>{value.location}</div>
+                    <div className='postingcard'>
+                        <div className='postingcard-companyname'>Company: {value.companyName}</div>
+                        <div className='postingcard-phonenumber'>Phone: {value.phoneNumber}</div>
+                        <div className='postingcard-employer'>Employer: {value.employer}</div>
+                        <div className='postingcard-jobdescription'>Description: {value.jobDescription}</div>
+                        <div className='postingcard-location'>Location: {value.location}</div>
                     </div>)
                     }
             </div>
