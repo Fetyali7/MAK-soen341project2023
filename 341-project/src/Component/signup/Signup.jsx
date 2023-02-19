@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './signup.css'
 
 export const Signup = () => {
     const [username, setUsername] = useState("");
@@ -26,15 +27,23 @@ export const Signup = () => {
     }
 
   return (
-    <div className='signup'>
-        <label>Username</label>
-        <input placeholder="Username" value={username} onChange={handleUsername}></input>
-        <label>Password</label>
-        <input placeholder="Password" value={password} onChange={handlePassword}></input>
-        <label>Confirm Password</label>
-        <input placeholder="Enter Password again" value={password} onChange={handlePasswordConfirm}></input>
-        <label>Email address</label>
-        <input placeholder="Email" value={email} onChange={handleEmail}></input>
+    <div className='signup gradient__bg'>
+        <div className='signup-username'>
+            <label>Username</label>
+            <input placeholder="Username" value={username} onChange={handleUsername}></input>
+        </div>
+        <div className='signup-password'>
+            <label>Password</label>
+            <input placeholder="Password" value={password} onChange={handlePassword}></input>
+        </div>
+        <div className='signup-confirmpassword'>
+            <label>Confirm Password</label>
+            <input placeholder="Enter Password again" value={password} onChange={handlePasswordConfirm}></input>
+        </div>
+        <div className='signup-email'>
+            <label>Email address</label>
+            <input placeholder="Email" value={email} onChange={handleEmail}></input>
+        </div>   
     </div>
   )
 }

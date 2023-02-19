@@ -15,6 +15,23 @@ main {
 .section__padding {
   padding: 4rem 6rem;
 }
+
+.gradient__bg{
+  /* ff 3.6+ */
+  background:-moz-radial-gradient(circle at 3% 25%, #CFEAFF 0%, #FFFFFF 100%);
+
+  /* safari 5.1+,chrome 10+ */
+  background:-webkit-radial-gradient(circle at 3% 25%, #CFEAFF 0%, #FFFFFF 100%);
+
+  /* opera 11.10+ */
+  background:-o-radial-gradient(circle at 3% 25%, #CFEAFF 0%, #FFFFFF 100%);
+
+  /* ie 10+ */
+  background:-ms-radial-gradient(circle at 3% 25%, #CFEAFF 0%, #FFFFFF 100%);
+
+  /* global 92%+ browsers support */
+  background:radial-gradient(circle at 3% 25%, #CFEAFF 0%, #FFFFFF 100%);
+}
 /* .navbar {
   display: flex;
   align-items: center; 

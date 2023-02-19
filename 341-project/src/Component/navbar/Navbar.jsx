@@ -10,9 +10,9 @@ export const Navbar = ({changeTab}) => {
     //     <div className='navItem' onClick={()=> {changeTab("Help")}}>Help</div>        
     // </div>
     <div className='Navbar__Background'>
-      <div class="topnav">
+      <div class="topnav ">
       <a href="#Home" class="active" onClick={()=> {changeTab("Home")}}>JobHunt</a>
-      <a href="#Finding" onClick={()=> {changeTab("Finding")}}>FindJob</a>
+      <a href="#Finding" className='' onClick={()=> {changeTab("Finding")}}>FindJob</a>
       <a href="#PostJob" onClick={()=> {changeTab("Posting")}}>PostJob</a>
       <a href="#Search" onClick={()=> {changeTab("Search")}}>Search</a>
       <div class="topnav-right">
