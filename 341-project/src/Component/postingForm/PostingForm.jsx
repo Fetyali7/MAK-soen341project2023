@@ -1,13 +1,26 @@
 import React, { useState } from 'react'
+import Axios from 'axios';
 import './postingForm.css'
 
 export const PostingForm = ({postingsList, setPostingsList}) => {
     const [companyName, setCompanyName] = useState("")
     const [phoneNumber, setPhoneNumber] = useState("")
-    const [employer, setEmployer] = useState("")
+    const [employerName, setEmployerName] = useState("")
     const [jobDescription, setJobDescription] = useState("")
     const [location, setLocation] = useState("")
     
+    const createPosting = () => {
+        Axios.post("http://localhost:3001/insertJobPosting", {  companyName:companyName, 
+                                                                phoneNumber:phoneNumber,
+                                                                employerName:employerName,
+                                                                jobDescription:jobDescription,
+                                                                location:location,
+        }).then(() => {
+            alert("Sucess");
+        });
+    }
+    
+
     const handleCompanyName = (e) => {
         setCompanyName(e.target.value);
     }
@@ -15,8 +28,8 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
         setPhoneNumber(e.target.value);
         
     }
-    const handleEmployer = (e) => {
-        setEmployer(e.target.value);
+    const handleEmployerName = (e) => {
+        setEmployerName(e.target.value);
         
     }
     const handleJobDescription = (e) => {
@@ -29,7 +42,7 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
     }
     const handlePostings = () =>  {
         setPostingsList([...postingsList, {companyName:companyName, phoneNumber:phoneNumber,
-                                         employer:employer,jobDescription:jobDescription,
+                                         employerName:employerName,jobDescription:jobDescription,
                                          location:location}]);
         console.log(postingsList);
     }
@@ -48,7 +61,7 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
                 </div>
                 <div className='postingform-content__input-employer'>
                     <label>Employer</label>
-                    <input placeholder="Employer" value={employer} onChange={handleEmployer}></input>
+                    <input placeholder="Employer" value={employerName} onChange={handleEmployerName}></input>
                 </div>
                 <div className='postingform-content__input-jobdescription'>
                     <label>Job Description</label>
@@ -59,7 +72,7 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
                     <input placeholder="Location" value={location} onChange={handleLocation}></input>
                 </div>
                 <div className='postingform-content__input-button'>
-                    <button onClick={handlePostings}> Add </button>
+                    <button onClick={createPosting}> Add </button>
                 </div>
             </div>
         </div>
