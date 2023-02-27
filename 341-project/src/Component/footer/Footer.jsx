@@ -16,7 +16,7 @@ export const Footer = () => {
                 </ul>
                 <ul>
                     <li><a href="https://github.com/Kadestery" target="_blank">Kade Keating</a></li>
-                    <li><a href="/" target="_blank">Name</a></li>
+                    <li><a href="https://github.com/Rihazul" target="_blank">Rihazul Islam</a></li>
                 </ul>
             </div>
         </footer>
