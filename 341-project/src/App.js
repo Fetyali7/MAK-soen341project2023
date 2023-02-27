@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 
-import { Findingpage, Footer, Homepage, Navbar, PostingForm, Signup} from './Component'
+import { Findingpage, Footer, Homepage, Navbar, PostingForm, Signup, Login} from './Component'
 /*import {Findingpage} from './Component/Findingpage';
 import { Footer } from './Component/Footer';
 import {Homepage} from './Component/Homepage';
