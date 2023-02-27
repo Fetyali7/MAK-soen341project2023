@@ -12,7 +12,7 @@ export const Footer = () => {
                 </ul>
                 <ul>
                     <li><a href="https://github.com/acerocks5" target="_blank">Daniel Wegrzyn</a></li>
-                    <li><a href="/" target="_blank">Name</a></li>
+                    <li><a href="https://github.com/yep-pushian" target="_blank">Yeprem Antranik</a></li>
                 </ul>
                 <ul>
                     <li><a href="/" target="_blank">Name</a></li>
