@@ -11,10 +11,10 @@ export const Login = () => {
         <div className="auth-form-container">
             <h2>Login</h2>
             <form className="login-form" onSubmit={handleSubmit}>
-                <label htmlFor="email">email</label>
-                <input value={email} type="email" placeholder="youremail@gmail.com" id="email" name="email"/>
-                <label htmlFor="password">password</label>
-                <input value={pass} type="password" placeholder="*********" id="password" name="password"/>
+                <label htmlFor="email">Email</label>
+                <input value={email} type="email" placeholder="youremail@gmail.com" id="email" name="email" onChange={e => setEmail(e.target.value)}/>
+                <label htmlFor="password">Password</label>
+                <input value={pass} type="password" placeholder="*********" id="password" name="password" onChange={e => setPass(e.target.value)}/>
                 <button type="submit">Log In</button>
             </form>
             <button>Don't have an account? Register here.</button>
