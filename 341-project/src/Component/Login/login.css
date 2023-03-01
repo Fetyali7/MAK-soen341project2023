@@ -1,12 +1,12 @@
 .body {
-    background-color:#6a82fb;
+    background-color:var(--color-login-background);
 }
 
 .auth-form-container{
     align-items: center;
     flex-direction: column;
     width: 99%;
-    background-color: #6a82fb;
+    background-color: var(--color-login-background);
     height: 100%;
 }
 
