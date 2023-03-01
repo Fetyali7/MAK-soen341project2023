@@ -53,7 +53,7 @@ export const Findingpage= ({Findingpage}) => {
 
   return (
     <div>
-      <input onChange={handleSearch}></input>
+      <input type="text" name="search" placeholder="Search..." onChange={handleSearch}></input>
       <button onClick={handleSortCompany}>Search Company</button>
       <button onClick={handleSortPosition}>Search Position</button>
       <button onClick={() => setFilteredList(jobList)}> X </button>
