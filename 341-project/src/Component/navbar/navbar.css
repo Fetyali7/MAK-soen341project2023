@@ -1,41 +1,51 @@
-
 .topnav {
-    background-color: var(--color-navbar);
-    overflow: hidden;
-    margin-left: 200px;
-    margin-right: 150px;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
+  display: inline-block;
+  background-color: var(--color-navbar);
+  overflow: hidden;
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 90%;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+
+  height: 100%;
   float: left;
   color: #fff;
   text-align: center;
-  padding: 14px 16px;
+  padding: 22px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 19px;
   border-color: var(--color-navbar-border);
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
   background-color: var(--color-navbar-hover);
   color: black;
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
   background-color: var(--color-navbar-active);
   color: white;
-  }
-  
-  /* Right-aligned section inside the top navigation */
-  .topnav-right {
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
   float: right;
-  }
-  
-  .Navbar__Background{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background: var(--color-navbar-background);
-  }
+}
+
+.Navbar__Background {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: var(--color-navbar-background);
+}
+
+.Navbar__Background img {
+  height: 70px;
+  border-radius: 50%;
+  margin-left: 30px;
+}
