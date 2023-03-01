@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import { FindingPage } from '..'
+import './findingpage.css'
 
 export const Findingpage= ({Findingpage}) => {
   const [sortCompany, setSortCompany] = useState("");
