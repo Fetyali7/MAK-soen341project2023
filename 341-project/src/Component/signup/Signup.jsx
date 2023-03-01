@@ -43,7 +43,8 @@ export const Signup = () => {
         <div className='signup-email'>
             <label>Email address</label>
             <input placeholder="Email" value={email} onChange={handleEmail}></input>
-        </div>   
+        </div><br></br>
+            <button type="submit">SignUp</button>
     </div>
   )
 }
