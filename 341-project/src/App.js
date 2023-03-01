@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 
-import { Findingpage, Footer, Homepage, Navbar, PostingForm, Signup, Login} from './Component'
+import { Findingpage, Footer, Homepage, Navbar, PostingForm, Signup, Login, Aboutpage} from './Component'
 /*import {Findingpage} from './Component/Findingpage';
 import { Footer } from './Component/Footer';
 import {Homepage} from './Component/Homepage';
@@ -21,6 +21,7 @@ function App() {
         {currentTab === "Finding" ? <Findingpage Findingpage={Findingpage}></Findingpage> : <></>}
         {currentTab === "Signup" ? <Signup></Signup> : <></>}
         {currentTab === "Login" ? <Login></Login> : <></>}
+        {currentTab === "Aboutpage" ? <Aboutpage></Aboutpage> : <></>}
         <Footer></Footer>
     </div>
   );
