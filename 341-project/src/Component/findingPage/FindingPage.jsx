@@ -53,24 +53,28 @@ export const Findingpage= ({Findingpage}) => {
   }
 
   return (
-    <div>
-      <input type="text" name="search" placeholder="Search..." onChange={handleSearch}></input>
-      <button onClick={handleSortCompany}>Search Company</button>
-      <button onClick={handleSortPosition}>Search Position</button>
-      <button onClick={() => setFilteredList(jobList)}> X </button>
-      {jobList.length > 0 ? (
-        <div> {filteredList.reverse().map((value) => 
-          <div>
-            <div>{value.companyName}</div>
-            <div>{value.phoneNumber}</div>
-            <div>{value.employerName}</div>
-            <div>{value.jobDescription}</div>
-            <div>{value.location}</div>
+    <div className='findingpage section__padding'>
+      <div className='findingpage-search'>
+        <input type="text" name="search" placeholder="Search..." onChange={handleSearch}></input>
+        <button onClick={handleSortCompany}>Search Company</button>
+        <button onClick={handleSortPosition}>Search Position</button>
+        <button onClick={() => setFilteredList(jobList)}> X </button>
+      </div>
+      <div className='findingpage-listing'>
+        {jobList.length > 0 ? (
+          <div> {filteredList.reverse().map((value) => 
+            <div className='findingcard'>
+              <div className='findingcard-companyname'>Company: {value.companyName}</div>
+              <div className='findingcard-phonenumber'>Phone Number: {value.phoneNumber}</div>
+              <div className='findingcard-employer'>Employer Name: {value.employerName}</div>
+              <div className='findingcard-jobdescription'>Description: {value.jobDescription}</div>
+              <div className='findingcard-location'>Location: {value.location}</div>
+            </div>
+          )}
           </div>
-        )}
-        </div>
-      ) : (<div>This is where you can find a job!</div>)
-      }
+        ) : (<div>This is where you can find a job!</div>)
+        }
+      </div>
     </div>
   )
 }
