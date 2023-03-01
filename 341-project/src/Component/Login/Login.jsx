@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './login.css'
 export const Login = () => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
@@ -11,13 +12,16 @@ export const Login = () => {
         <div className="auth-form-container">
             <h2>Login</h2>
             <form className="login-form" onSubmit={handleSubmit}>
-                <label htmlFor="email">Email</label>
-                <input value={email} type="email" placeholder="youremail@gmail.com" id="email" name="email" onChange={e => setEmail(e.target.value)}/>
-                <label htmlFor="password">Password</label>
-                <input value={pass} type="password" placeholder="*********" id="password" name="password" onChange={e => setPass(e.target.value)}/>
-                <button type="submit">Log In</button>
+                <div className='login-username'>
+                    <label htmlFor="email">Email</label>
+                    <input value={email} type="email" placeholder="youremail@gmail.com" id="email" name="email" onChange={e => setEmail(e.target.value)}/>
+                </div>
+                <div className='login-password'>
+                    <label htmlFor="password">Password</label>
+                    <input value={pass} type="password" placeholder="*********" id="password" name="password" onChange={e => setPass(e.target.value)}/>
+                </div>
+                    <button type="submit">Log In</button>
             </form>
-            <button>Don't have an account? Register here.</button>
         </div>
     )
 }
