@@ -21,7 +21,7 @@ export const Navbar = ({ changeTab }) => {
         <div class="topnav-right">
           <a onClick={() => { changeTab("Login") }}>Login</a>
           <a onClick={() => { changeTab("Signup") }}>SignUp</a>
-          <a onClick={() => { changeTab("Aboutcompany") }}>About</a>
+          <a onClick={() => { changeTab("Aboutpage") }}>About</a>
         </div>
       </div>
     </div>
