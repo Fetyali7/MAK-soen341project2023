@@ -4,7 +4,7 @@ import './homepage.css'
 export const Homepage = ({Homepage}) =>{
   return (
     <div>
-    <h1>Welcome to JobHunt</h1>
+    <h1>Welcome to JobHunt!</h1>
     <img src={logo} alt="JobHunt LOGO"/>
     </div>
   )
