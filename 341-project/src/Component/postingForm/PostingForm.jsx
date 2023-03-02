@@ -89,7 +89,7 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
                     </div>)
                     }
             </div>
-                : (<div> List is empty </div>)
+                : (<div></div>)
             }
         </div>
     </div>
