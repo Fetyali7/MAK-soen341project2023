@@ -7,7 +7,7 @@ const db = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 'password',
-  database : 'MAK_database'
+  database : 'mak_database'
 });
 
 app.use(cors());
