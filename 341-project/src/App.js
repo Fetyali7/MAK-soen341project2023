@@ -21,7 +21,7 @@ function App() {
         {currentTab === "Finding" ? <Findingpage Findingpage={Findingpage}></Findingpage> : <></>}
         {currentTab === "Signup" ? <Signup></Signup> : <></>}
         {currentTab === "Login" ? <Login></Login> : <></>}
-        {currentTab === "Aboutcompany" ? <Aboutpage></Aboutpage> : <></>}
+        {currentTab === "Aboutpage" ? <Aboutpage></Aboutpage> : <></>}
         <Footer></Footer>
     </div>
   );
