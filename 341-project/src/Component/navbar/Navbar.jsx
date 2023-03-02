@@ -17,11 +17,12 @@ export const Navbar = ({ changeTab }) => {
         <a href="#Home" class="active" onClick={() => { changeTab("Home") }}>JobHunt</a>
         <a href="#Finding" className='' onClick={() => { changeTab("Finding") }}>FindJob</a>
         <a href="#PostJob" onClick={() => { changeTab("Posting") }}>PostJob</a>
+        <a href="#Search" onClick={() => { changeTab("Search") }}>Search</a>
 
         <div class="topnav-right">
           <a onClick={() => { changeTab("Login") }}>Login</a>
           <a onClick={() => { changeTab("Signup") }}>SignUp</a>
-          <a onClick={() => { changeTab("Aboutpage") }}>About</a>
+          <a onClick={() => { changeTab("Aboutcompany") }}>About</a>
         </div>
       </div>
     </div>
