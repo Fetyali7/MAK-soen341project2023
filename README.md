@@ -44,4 +44,4 @@ The login credentials for this system are under high security and nobody will ha
 
 ## Video (Sprint2)
 https://youtu.be/i_xzDMSR4ew (Main)
-https://youtu.be/yiX7x_2dSk8 (SQL database)
+https://youtu.be/NYyQul9SLb4 (SQL database)
