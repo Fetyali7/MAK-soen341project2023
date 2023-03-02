@@ -41,3 +41,6 @@ The login credentials for this system are under high security and nobody will ha
 |Daniel Wegrzyn|40178262|acerocks5|Front-end developer|
 |Yeprem Antranik|40204291|yep-pushian|Front-end developer|
 |Rihazul Islam|40212505|Rihazul|Back-end developer|
+
+## Video (Sprint2)
+https://youtu.be/H3qnalZbAWU
