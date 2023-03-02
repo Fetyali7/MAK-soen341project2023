@@ -45,6 +45,16 @@ app.post("/insertJobPosting", (req,res) => {
     });
 });
 
+app.delete("/deleteJobPostings/:idJobPostings", (req, res) => {
+    const id = req.params.idJobPostings;
+    const sqlDelete = "DELETE from jobpostings WHERE idJobPostings = ?";
+
+    db.query(sqlDelete, id, (err, result) => {
+        if (err) console.log(err);
+    })
+
+}) 
+
 app.listen(3001, () => {
     console.log("Running on port 3001");
 })

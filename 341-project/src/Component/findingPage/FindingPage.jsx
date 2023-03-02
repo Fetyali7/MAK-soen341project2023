@@ -52,6 +52,11 @@ export const Findingpage= ({Findingpage}) => {
   setFilteredList(filtered);
   }
 
+  const deleteJobPosting = (idJobPostings) => {
+    Axios.delete(`http://localhost:3001/deleteJobPostings/${idJobPostings}`);
+    console.log(idJobPostings)
+  }
+
   return (
     <div className='findingpage section__padding'>
       <div className='findingpage-search'>
@@ -69,6 +74,7 @@ export const Findingpage= ({Findingpage}) => {
               <div className='findingcard-employer'>Employer Name: {value.employerName}</div>
               <div className='findingcard-jobdescription'>Description: {value.jobDescription}</div>
               <div className='findingcard-location'>Location: {value.location}</div>
+              <button onClick={() => {deleteJobPosting(value.idJobPostings)}}> delete </button>
             </div>
           )}
           </div>
