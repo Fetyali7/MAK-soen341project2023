@@ -24,6 +24,7 @@
     flex-direction: column;
     width: 25%;
     background-color: var(--color-login-background);
+    border-radius:25px;
     height: 100%;
     padding-top:2%;
     margin: 2.5% 36%;

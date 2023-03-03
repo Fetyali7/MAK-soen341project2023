@@ -53,7 +53,7 @@ export const Signup = ({signUpList, setSignUpList}) => {
                 <input placeholder="Enter Password again" value={password} onChange={handlePasswordConfirm}></input>
             </div>
             <div className='signup-email'>
-                <label>Email address</label>
+                <label>Email</label>
                 <input placeholder="youremail@gmail.com" value={email} onChange={handleEmail}></input>
             </div><br></br>
                 <button type="submit" name="signUp" onClick={createUserSu}>SignUp</button>
