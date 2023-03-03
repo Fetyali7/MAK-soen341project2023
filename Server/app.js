@@ -22,7 +22,7 @@ db.connect(function(err) {
 });
 
 /**FOR LOGIN**/
-app.get("/Users", (req, res) => {
+app.get("/users", (req, res) => {
     const sqlSelect = "SELECT * FROM users";
     db.query(sqlSelect, (err, result) => {
         res.send(result);

@@ -38,7 +38,7 @@ export const Login = ({loginList, setloginList}) => {
                     <label htmlFor="password">Password</label>
                     <input value={pass} type="password" placeholder="*********" id="password" name="password" onChange={handlePass}/>
                 </div>
-                    <button type="submit" onClick={createUser}>Log In</button>
+                    <button name="userBut" onClick={createUser}>Log In</button>
             </form>
         </div>
     )

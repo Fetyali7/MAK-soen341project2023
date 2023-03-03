@@ -26,7 +26,7 @@
 
 .login-form{
     align-items: center;
-    padding: 4rem 6rem;
+    padding: 3rem 6rem;
 }
 
 .login input{
@@ -34,7 +34,7 @@
     width: 100%;
     background: #fff;
     border: 2px solid var(--color-navbar-background);
-    padding: 0 1rem;
+    padding: 0 2rem;
     outline: none;
     border-radius: 5px;
     font-size: 20px;
@@ -66,3 +66,25 @@
     align-items: center;
     flex-direction: column;
 }
+
+[name~="userBut"]{
+    display: inline-block;
+    background-color: #7b38d8;
+    padding: 5px;
+    width: 150px;
+    color: #ffffff;
+    text-align: center;
+    border: 4px double #cccccc;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 5px;
+    margin-top: 20px;
+    -webkit-transition: all 0.5s; /* add this line, chrome, safari, etc */
+    -moz-transition: all 0.5s; /* add this line, firefox */
+    -o-transition: all 0.5s; /* add this line, opera */
+    transition: all 0.5s; /* add this line */
+  }
+  [name~="userBut"]:hover {
+    background-color: turquoise;
+  }
