@@ -57,9 +57,6 @@ label{
     outline: none;
 }
 
-[name~="usernameIn"]{
-
-}
 
 .signup-username {
     width: 30%;
