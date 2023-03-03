@@ -54,7 +54,7 @@ export const Signup = ({signUpList, setSignUpList}) => {
             </div>
             <div className='signup-email'>
                 <label>Email address</label>
-                <input placeholder="Email" value={email} onChange={handleEmail}></input>
+                <input placeholder="youremail@gmail.com" value={email} onChange={handleEmail}></input>
             </div><br></br>
                 <button type="submit" name="signUp" onClick={createUserSu}>SignUp</button>
         </form>
