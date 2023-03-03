@@ -37,24 +37,27 @@ export const Signup = ({signUpList, setSignUpList}) => {
     }
 
   return (
-    <div className='signup gradient__bg'>
-        <div className='signup-username'>
-            <label>Username</label>
-            <input placeholder="Username" value={username} onChange={handleUsername}></input>
-        </div>
-        <div className='signup-password'>
-            <label>Password</label>
-            <input placeholder="Password" value={password} onChange={handlePassword}></input>
-        </div>
-        <div className='signup-confirmpassword'>
-            <label>Confirm Password</label>
-            <input placeholder="Enter Password again" value={password} onChange={handlePasswordConfirm}></input>
-        </div>
-        <div className='signup-email'>
-            <label>Email address</label>
-            <input placeholder="Email" value={email} onChange={handleEmail}></input>
-        </div><br></br>
-            <button type="submit" onClick={createUserSu}>SignUp</button>
+    <div className= "signup-form-container">
+        <h2>SignUp</h2>
+        <form className="signup-form">
+            <div className='signup-username'>
+                <label>Username</label>
+                <input name="usernameIn" placeholder="Username" value={username} onChange={handleUsername}></input>
+            </div>
+            <div className='signup-password'>
+                <label>Password</label>
+                <input placeholder="Password" value={password} onChange={handlePassword}></input>
+            </div>
+            <div className='signup-confirmpassword'>
+                <label>Confirm Password</label>
+                <input placeholder="Enter Password again" value={password} onChange={handlePasswordConfirm}></input>
+            </div>
+            <div className='signup-email'>
+                <label>Email address</label>
+                <input placeholder="Email" value={email} onChange={handleEmail}></input>
+            </div><br></br>
+                <button type="submit" name="signUp" onClick={createUserSu}>SignUp</button>
+        </form>
     </div>
   )
 }

@@ -1,34 +1,63 @@
-.signup{
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    background-color: #fff;
-    padding: 4rem 6rem 25rem;
+.body {
+    background:-moz-radial-gradient(circle at 3% 25%, #CFEAFF 0%, #FFFFFF 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-radial-gradient(circle at 3% 25%, #CFEAFF 0%, #FFFFFF 100%);
+  
+    /* opera 11.10+ */
+    background:-o-radial-gradient(circle at 3% 25%, #CFEAFF 0%, #FFFFFF 100%);
+  
+    /* ie 10+ */
+    background:-ms-radial-gradient(circle at 3% 25%, #CFEAFF 0%, #FFFFFF 100%);
+  
+    /* global 92%+ browsers support */
+    background:radial-gradient(circle at 3% 25%, #CFEAFF 0%, #FFFFFF 100%);
+    background-color:var(--color-login-background);
 }
 
-.signup input{
+.signup-form-container{
+    /*box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+	transform: translatey(0px);
+	animation: float 4s ease-in-out infinite;*/
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    width: 25%;
+    background-color: var(--color-login-background);
+    height: 100%;
+    padding-top:2%;
+    margin: 2.5% 36%;
+}
+
+.signup-form{
+    align-items: center;
+    
+}
+
+.input{
     flex: 1;
     width: 100%;
     background: #fff;
     border: 2px solid var(--color-navbar-background);
-    padding: 0 1rem;
+    /*padding: 0 2rem;*/
     outline: none;
     border-radius: 5px;
     font-size: 20px;
     line-height: 35px;
 }
 
-.signup label{
+label{
     flex: 1;
-    width: 100%;
+    width: 150px;
     font-size: 15px;
     line-height: 35px;
-    text-align: flex-start;
+    text-align: center;
     color: #000000;
     outline: none;
+}
+
+[name~="usernameIn"]{
+
 }
 
 .signup-username {
@@ -37,6 +66,8 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    padding-top: 10%;
+    padding-left:50%;
 }
 
 .signup-password{
@@ -45,21 +76,62 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    padding-left:50%;
 }
-
-.signup-confirmpassword {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.signup-email {
+.signup-confirmpassword{
     width: 30%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    padding-left:50%;
+}
+.signup-email{
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-left:50%;
 }
 
+[name~="signUp"]{
+    box-shadow: 0 5px 5px 0px rgba(0,0,0,0.6);
+	transform: translatey(0px);
+	animation: float 4s ease-in-out infinite;
+    display: inline-block;
+    background-color: #7b38d8;
+    padding: 5px;
+    width: 150px;
+    color: #ffffff;
+    text-align: center;
+    border: 4px double #cccccc;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 5px;
+    margin-top: 20px;
+    -webkit-transition: all 0.5s; /* add this line, chrome, safari, etc */
+    -moz-transition: all 0.5s; /* add this line, firefox */
+    -o-transition: all 0.5s; /* add this line, opera */
+    transition: all 0.5s; /* add this line */
+    margin-bottom:10%;
+  }
+  [name~="signUp"]:hover {
+    background-color: turquoise;
+  }
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(57, 32, 148, 0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(67, 28, 175, 0.2);
+		transform: translatey(-5px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(62, 18, 223, 0.6);
+		transform: translatey(0px);
+	}
+}

@@ -16,6 +16,9 @@
 }
 
 .auth-form-container{
+    /*box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+	transform: translatey(0px);
+	animation: float 4s ease-in-out infinite;*/
     align-items: center;
     flex-direction: column;
     width: 25%;
@@ -68,6 +71,9 @@
 }
 
 [name~="userBut"]{
+    box-shadow: 0 5px 5px 0px rgba(0,0,0,0.6);
+	transform: translatey(0px);
+	animation: float 4s ease-in-out infinite;
     display: inline-block;
     background-color: #7b38d8;
     padding: 5px;
@@ -88,3 +94,18 @@
   [name~="userBut"]:hover {
     background-color: turquoise;
   }
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(57, 32, 148, 0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(67, 28, 175, 0.2);
+		transform: translatey(-5px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(62, 18, 223, 0.6);
+		transform: translatey(0px);
+	}
+}
