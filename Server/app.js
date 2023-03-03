@@ -21,6 +21,41 @@ db.connect(function(err) {
   console.log('connected as id ' + db.threadId);
 });
 
+/**FOR LOGIN**/
+app.get("/Users", (req, res) => {
+    const sqlSelect = "SELECT * FROM users";
+    db.query(sqlSelect, (err, result) => {
+        res.send(result);
+    })
+})
+
+app.post("/insertUsers", (req,res) => {
+    const email = req.body.email;
+    const pass = req.body.pass;
+
+    const sqlInsert = "INSERT INTO users (email, pass) VALUES (?,?)";
+    db.query(sqlInsert, [email, pass], (err, result) => {
+        if(err) {
+            console.log(err);
+        } else {
+            res.send("Values inserted");
+        }
+    });
+});
+
+
+
+/**FOR JobPostings**/
+app.delete("/deleteJobPostings/:idJobPostings", (req, res) => {
+    const id = req.params.idJobPostings;
+    const sqlDelete = "DELETE from jobpostings WHERE idJobPostings = ?";
+
+    db.query(sqlDelete, id, (err, result) => {
+        if (err) console.log(err);
+    })
+
+}) 
+
 app.get("/JobPostings", (req, res) => {
     const sqlSelect = "SELECT * FROM jobpostings";
     db.query(sqlSelect, (err, result) => {
@@ -45,15 +80,7 @@ app.post("/insertJobPosting", (req,res) => {
     });
 });
 
-app.delete("/deleteJobPostings/:idJobPostings", (req, res) => {
-    const id = req.params.idJobPostings;
-    const sqlDelete = "DELETE from jobpostings WHERE idJobPostings = ?";
 
-    db.query(sqlDelete, id, (err, result) => {
-        if (err) console.log(err);
-    })
-
-}) 
 
 app.listen(3001, () => {
     console.log("Running on port 3001");
