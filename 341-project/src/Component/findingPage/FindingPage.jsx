@@ -74,7 +74,7 @@ export const Findingpage= ({Findingpage}) => {
               <div className='findingcard-employer'>Employer Name: {value.employerName}</div>
               <div className='findingcard-jobdescription'>Description: {value.jobDescription}</div>
               <div className='findingcard-location'>Location: {value.location}</div>
-              <button onClick={() => {deleteJobPosting(value.idJobPostings)}}> delete </button>
+              <button name="delBut" onClick={() => {deleteJobPosting(value.idJobPostings)}}> Delete </button>
             </div>
           )}
           </div>
