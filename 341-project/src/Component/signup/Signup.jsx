@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from 'react'
+import Axios from 'axios';
 import './signup.css'
 
-export const Signup = () => {
+export const Signup = ({signUpList, setSignUpList}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [error, setError] = useState(false);
     const [type, setType] = useState("Student");
+
+    const createUserSu = () => {
+        Axios.post("http://localhost:3001/insertUserSu", {  username:username, 
+                                                            password:password,
+                                                            email:email,
+        }).then(() => {
+            alert("Sucess");
+        });
+    }
 
     const handleUsername = (e) => {
         setUsername(e.target.value);
@@ -44,7 +54,7 @@ export const Signup = () => {
             <label>Email address</label>
             <input placeholder="Email" value={email} onChange={handleEmail}></input>
         </div><br></br>
-            <button type="submit">SignUp</button>
+            <button type="submit" onClick={createUserSu}>SignUp</button>
     </div>
   )
 }

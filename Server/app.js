@@ -43,6 +43,28 @@ app.post("/insertUsers", (req,res) => {
     });
 });
 
+/**FOR SIGNUP**/
+app.get("/userSu", (req, res) => {
+    const sqlSelect = "SELECT * FROM userSu";
+    db.query(sqlSelect, (err, result) => {
+        res.send(result);
+    })
+})
+
+app.post("/insertUserSu", (req,res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    const email = req.body.email;
+
+    const sqlInsert = "INSERT INTO userSu (username, password, email) VALUES (?,?,?)";
+    db.query(sqlInsert, [username, password, email], (err, result) => {
+        if(err) {
+            console.log(err);
+        } else {
+            res.send("Values inserted");
+        }
+    });
+});
 
 
 /**FOR JobPostings**/

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Axios from 'axios';
 import './login.css'
-export const Login = ({loginList, setloginList}) => {
+export const Login = ({loginList, setLoginList}) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 

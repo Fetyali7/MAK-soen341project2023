@@ -11,6 +11,8 @@ import { Signup } from './Component/Signup';*/
 
 function App() {
   const [postingsList, setPostingsList] = useState([]);
+  const [loginList, setLoginList] = useState([]);
+  const [signUpList, setSignUpList] = useState([]);
   const [currentTab, setCurrentTab] = useState("Home");
 
   return (
@@ -19,8 +21,8 @@ function App() {
         {currentTab === "Home" ? <Homepage Homepage={Homepage}></Homepage> : <></>}
         {currentTab === "Posting" ? <PostingForm postingsList={postingsList} setPostingsList={setPostingsList}></PostingForm> : <></>}
         {currentTab === "Finding" ? <Findingpage Findingpage={Findingpage}></Findingpage> : <></>}
-        {currentTab === "Signup" ? <Signup></Signup> : <></>}
-        {currentTab === "Login" ? <Login></Login> : <></>}
+        {currentTab === "Signup" ? <Signup signUpList={signUpList} setSignUpList={setSignUpList}></Signup> : <></>}
+        {currentTab === "Login" ? <Login loginList={loginList} setLoginList={setLoginList}></Login> : <></>}
         {currentTab === "Aboutpage" ? <Aboutpage></Aboutpage> : <></>}
         <Footer></Footer>
     </div>
