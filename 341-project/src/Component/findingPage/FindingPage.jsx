@@ -3,7 +3,7 @@ import Axios from 'axios';
 import { FindingPage } from '..'
 import './findingpage.css'
 
-export const Findingpage= ({Findingpage}) => {
+export const Findingpage= ({ changeTab, setCurrentForm }) => {
   const [sortCompany, setSortCompany] = useState("");
   const [sortPosition, setSortPosition] = useState("");
   const [search, setSearch] = useState("");
@@ -57,6 +57,11 @@ export const Findingpage= ({Findingpage}) => {
     console.log(idJobPostings)
   }
 
+  const editJobPosting = (e) => {
+    changeTab("EditForm");
+    setCurrentForm(e);
+  }
+
   return (
     <div className='findingpage section__padding'>
       <div className='findingpage-search'>
@@ -74,6 +79,7 @@ export const Findingpage= ({Findingpage}) => {
               <div className='findingcard-employer'>Employer Name: {value.employerName}</div>
               <div className='findingcard-jobdescription'>Description: {value.jobDescription}</div>
               <div className='findingcard-location'>Location: {value.location}</div>
+              <button name="delBut" onClick={() => {editJobPosting(value)}}> Edit </button>
               <button name="delBut" onClick={() => {deleteJobPosting(value.idJobPostings); window.location.reload(true); window.location = '341-project/src/Component/findingPage/FindingPage.jsx'}}> Delete </button>
             </div>
           )}

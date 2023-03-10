@@ -102,7 +102,34 @@ app.post("/insertJobPosting", (req,res) => {
     });
 });
 
+app.put("/update", (req, res) => {
+    const companyName = req.body.companyName;
+    const phoneNumber = req.body.phoneNumber;
+    const employerName = req.body.employerName;
+    const jobDescription = req.body.jobDescription;
+    const location = req.body.location;
+    const id = req.body.id;
+    
+    const sqlEdit =  "UPDATE jobpostings SET companyName = ?, phoneNumber = ?, employerName = ?, jobDescription = ?, location = ? WHERE idJobPostings = ?";
 
+    db.query(sqlEdit, [companyName, phoneNumber, employerName, jobDescription, location, id], (err, result) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send(result);
+        }
+      }
+    );
+  });
+
+app.delete("/deleteJobPostings/:idJobPostings", (req, res) => {
+    const id = req.params.idJobPostings;
+    const sqlDelete = "DELETE from jobpostings WHERE idJobPostings = ?";
+
+    db.query(sqlDelete, id, (err, result) => {
+        if (err) console.log(err);
+    })
+});
 
 app.listen(3001, () => {
     console.log("Running on port 3001");
