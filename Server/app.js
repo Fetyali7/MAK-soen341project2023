@@ -55,9 +55,10 @@ app.post("/insertUserSu", (req,res) => {
     const username = req.body.username;
     const password = req.body.password;
     const email = req.body.email;
+    const apliemp = req.body.apliemp;
 
-    const sqlInsert = "INSERT INTO userSu (username, password, email) VALUES (?,?,?)";
-    db.query(sqlInsert, [username, password, email], (err, result) => {
+    const sqlInsert = "INSERT INTO userSu (username, password, email, apliemp) VALUES (?,?,?,?)";
+    db.query(sqlInsert, [username, password, email, apliemp], (err, result) => {
         if(err) {
             console.log(err);
         } else {
@@ -73,7 +74,7 @@ app.delete("/deleteJobPostings/:idJobPostings", (req, res) => {
     const sqlDelete = "DELETE from jobpostings WHERE idJobPostings = ?";
 
     db.query(sqlDelete, id, (err, result) => {
-        if (err) console.log(err);
+        if (err){ console.log(err);}
     })
 
 }) 
@@ -121,15 +122,6 @@ app.put("/update", (req, res) => {
       }
     );
   });
-
-app.delete("/deleteJobPostings/:idJobPostings", (req, res) => {
-    const id = req.params.idJobPostings;
-    const sqlDelete = "DELETE from jobpostings WHERE idJobPostings = ?";
-
-    db.query(sqlDelete, id, (err, result) => {
-        if (err) console.log(err);
-    })
-});
 
 app.listen(3001, () => {
     console.log("Running on port 3001");
