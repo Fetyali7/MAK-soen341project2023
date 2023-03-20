@@ -57,7 +57,6 @@ export const Login = ({ changeTab, setCurrentForm }) => {
                     <button name="userBut" onClick={handleLogin}>Log In</button>
             </form>
         </div>
-        
     )
 }
 
