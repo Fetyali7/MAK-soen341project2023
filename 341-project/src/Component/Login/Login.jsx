@@ -4,7 +4,6 @@ import './login.css'
 export const Login = ({ changeTab, setCurrentForm }) => {
     const [email1, setEmail] = useState('');
     const [pass1, setPass] = useState('');
-    const [informationexist, setbool] = useState(false);
     const [LoginList, setLoginList] = useState([]);
     const [filteredList, setFilteredList] = useState([]);
 
