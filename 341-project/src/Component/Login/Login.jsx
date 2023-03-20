@@ -5,12 +5,10 @@ export const Login = ({ changeTab, setCurrentForm }) => {
     const [email1, setEmail] = useState('');
     const [pass1, setPass] = useState('');
     const [LoginList, setLoginList] = useState([]);
-    const [filteredList, setFilteredList] = useState([]);
 
     useEffect(() => {
         Axios.get("http://localhost:3001/userSu").then((response) => {
             setLoginList(response.data);
-            setFilteredList(response.data);
         });
     }, []);
 
@@ -25,15 +23,10 @@ export const Login = ({ changeTab, setCurrentForm }) => {
       
     
       const handleLogin = () => {
-        let filtered = LoginList.filter(user => {
-            return user.email.includes(email1);
-          })
         let email = LoginList.find(user => user.email===email1).email;
         let password = LoginList.find(user => user.email===email1).password;
         let username = LoginList.find(user => user.email===email1).username;
         if(email===email1 && password===pass1){
-        
-            setFilteredList(filtered);
             alert("Welcome " + username + "!");
             }
         else{
