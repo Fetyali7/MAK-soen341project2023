@@ -21,27 +21,6 @@ db.connect(function(err) {
   console.log('connected as id ' + db.threadId);
 });
 
-/**FOR LOGIN**/
-app.get("/users", (req, res) => {
-    const sqlSelect = "SELECT * FROM users";
-    db.query(sqlSelect, (err, result) => {
-        res.send(result);
-    })
-})
-
-app.post("/insertUsers", (req,res) => {
-    const email = req.body.email;
-    const pass = req.body.pass;
-
-    const sqlInsert = "INSERT INTO users (email, pass) VALUES (?,?)";
-    db.query(sqlInsert, [email, pass], (err, result) => {
-        if(err) {
-            console.log(err);
-        } else {
-            res.send("Values inserted");
-        }
-    });
-});
 
 /**FOR SIGNUP**/
 app.get("/userSu", (req, res) => {
