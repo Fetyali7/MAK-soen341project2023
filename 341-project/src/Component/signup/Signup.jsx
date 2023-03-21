@@ -15,7 +15,7 @@ export const Signup = ({signUpList, setSignUpList}) => {
                                                             email:email,
                                                             apliemp:apliemp,
         }).then(() => {
-            alert("Sucess");
+            alert("You have successfully signed up!");
         });
     }
 

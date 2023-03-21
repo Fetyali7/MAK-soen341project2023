@@ -24,33 +24,6 @@ export const Findingpage= ({ changeTab, setCurrentForm }) => {
     // }
     console.log(e.target.value)
     setSearch(e.target.value);
-    console.log(search)
-    const search2 = e.target.value;
-    if(search2) {
-      //console.log(search);
-      let filtered = jobList.filter(job => {
-        
-        return job.companyName.toLowerCase().includes(search2.toLowerCase());
-      })
-      //console.log(filtered)
-
-      setFilteredList(filtered);
-    } else {
-      setFilteredList(jobList);
-    }
-
-    // if(search) {
-    //   //console.log(search);
-    //   let filtered = jobList.filter(job => {
-        
-    //     return job.companyName.toLowerCase().includes(search.toLowerCase());
-    //   })
-    //   //console.log(filtered)
-
-    //   setFilteredList(filtered);
-    // } else {
-    //   setFilteredList(jobList);
-    // }
   }
   const handleSortCompany = () => {
     setSortPosition("")

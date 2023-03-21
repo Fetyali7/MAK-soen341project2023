@@ -20,7 +20,39 @@ db.connect(function(err) {
   }
   console.log('connected as id ' + db.threadId);
 });
+/**For Login and accessing pages */
+app.get("/UserLogin", (req, res) => {
+    const sqlSelect = "SELECT * FROM UserLogin";
+    db.query(sqlSelect, (err, result) => {
+        res.send(result);
+    })
+})
 
+app.post("/insertUserLogin", (req,res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    const email = req.body.email;
+    const apliemp = req.body.apliemp;
+
+    const sqlInsert = "INSERT INTO UserLogin (username, password, email, apliemp) VALUES (?,?,?,?)";
+    db.query(sqlInsert, [username, password, email, apliemp], (err, result) => {
+        if(err) {
+            console.log(err);
+        } else {
+            res.send("Values inserted");
+        }
+    });
+});
+
+app.delete("/deleteUserLogin/:idUserLogin", (req, res) => {
+    const id = req.params.idUserLogin;
+    const sqlDelete = "DELETE from UserLogin WHERE idUserLogin = ?";
+
+    db.query(sqlDelete, id, (err, result) => {
+        if (err){ console.log(err);}
+    })
+
+}) 
 
 /**FOR SIGNUP**/
 app.get("/userSu", (req, res) => {

@@ -1,0 +1,33 @@
+.about {
+    display: flex;
+    padding-bottom: 35rem;
+    flex-direction: column;
+}
+
+.about-heading h1{
+    background: var(--color-navbar-background);
+    font-size: 40px;
+    font-weight: 600;
+    align-items: center;
+    margin-bottom: -15px;
+    margin-top:0px;
+    color: #fff;
+
+}
+
+.about-heading {
+    justify-content: center;
+    background: #fff;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.about-content {
+    font-size: 25px;
+    padding-top: 2rem;
+    font-weight: 400;
+    text-align: center;
+    background: #fff;
+    padding-bottom: 1rem;
+}
