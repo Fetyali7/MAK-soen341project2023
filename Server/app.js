@@ -43,7 +43,6 @@ app.post("/insertUserLogin", (req,res) => {
         }
     });
 });
-
 app.delete("/deleteUserLogin/:idUserLogin", (req, res) => {
     const id = req.params.idUserLogin;
     const sqlDelete = "DELETE from UserLogin WHERE idUserLogin = ?";
