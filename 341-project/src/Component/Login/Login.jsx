@@ -21,7 +21,7 @@ export const Login = ({ changeTab, setlogin}) => {
                                                             email:email,
                                                             apliemp:apliemp,
         }).then(() => {
-            alert("Welcome " + username + "!\n You have successfully logged in!");
+            alert("Welcome " + username + "!\nYou have successfully logged in!");
             window.location.reload();
             changeTab("Home");
         });
