@@ -36,13 +36,11 @@ export const Login = ({ changeTab, setlogin}) => {
 
     
     const handleLogin = () => {
-        let eml = LoginList.find(user => user.email===email1).email;
-        let pa = LoginList.find(user => user.email===email1).password;
-        if(eml===email1 && pa===pass1){
-            const loginUser = LoginList.find(user => user.email===email1);
-            setEmail(loginUser.email);
-            setPass(loginUser.password);
+        const loginUser = LoginList.find(user => user.email===email1);
+        if(loginUser.email===email1 && loginUser.password===pass1){
             setUser(loginUser.username);
+            setPass(loginUser.password);
+            setEmail(loginUser.email);
             setApliemp(loginUser.apliemp);
             createUserLogin();
         }

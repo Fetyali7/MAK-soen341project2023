@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import './postingForm.css'
 
@@ -8,17 +8,29 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
     const [employerName, setEmployerName] = useState("")
     const [jobDescription, setJobDescription] = useState("")
     const [location, setLocation] = useState("")
+    const [loginList, setLoginList] = useState([])
+    const [Employer, setEmployer] = useState("")
     
+    useEffect(() => {
+        Axios.get("http://localhost:3001/UserLogin").then((response) => {
+            setLoginList(response.data);
+            const loginUser = response.data.find(user => user.username);
+            setEmployer(loginUser.username);
+        });
+      }, []);
+
     const createPosting = () => {
         Axios.post("http://localhost:3001/insertJobPosting", {  companyName:companyName, 
                                                                 phoneNumber:phoneNumber,
                                                                 employerName:employerName,
                                                                 jobDescription:jobDescription,
                                                                 location:location,
+                                                                Employer:Employer,
         }).then(() => {
             alert("Sucess");
         });
     }
+
     
 
     const handleCompanyName = (e) => {
@@ -43,7 +55,7 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
     const handlePostings = () =>  {
         setPostingsList([...postingsList, {companyName:companyName, phoneNumber:phoneNumber,
                                          employerName:employerName,jobDescription:jobDescription,
-                                         location:location}]);
+                                         location:location, Employer:Employer}]);
         console.log(postingsList);
     }
 

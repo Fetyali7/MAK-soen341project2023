@@ -9,6 +9,7 @@ export const Findingpage= ({ changeTab, setCurrentForm }) => {
   const [search, setSearch] = useState("");
 
   const [jobList, setJobList] = useState([]);
+  const [loginList, setLoginList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
 
     useEffect(() => {
@@ -16,6 +17,12 @@ export const Findingpage= ({ changeTab, setCurrentForm }) => {
             setJobList(response.data);
             setFilteredList(response.data);
         });
+    }, []);
+
+    useEffect(() => {
+      Axios.get("http://localhost:3001/UserLogin").then((response) => {
+          setLoginList(response.data);
+      });
     }, []);
 
   const handleSearch = (e) => {
@@ -61,7 +68,7 @@ export const Findingpage= ({ changeTab, setCurrentForm }) => {
     changeTab("EditForm");
     setCurrentForm(e);
   }
-
+  
   return (
     <div className='findingpage section__padding'>
       <div className='findingpage-search'>
@@ -79,8 +86,12 @@ export const Findingpage= ({ changeTab, setCurrentForm }) => {
               <div className='findingcard-employer'>Employer Name: {value.employerName}</div>
               <div className='findingcard-jobdescription'>Description: {value.jobDescription}</div>
               <div className='findingcard-location'>Location: {value.location}</div>
+              {value.Employer === (loginList.find(user => user.username)).username &&
+              <React.Fragment>
               <button name="delBut" onClick={() => {editJobPosting(value)}}> Edit </button>
               <button name="delBut" onClick={() => {deleteJobPosting(value.idJobPostings); window.location.reload(true); window.location = '341-project/src/Component/findingPage/FindingPage.jsx'}}> Delete </button>
+              </React.Fragment>
+              }
             </div>
           )}
           </div>
