@@ -11,17 +11,17 @@ export const Navbar = ({ changeTab }) => {
 
 
 
-  // useEffect(() => {
-  //   Axios.get("http://localhost:3001/UserLogin").then((response) => {
-  //       setLoginList(response.data);
-  //   });
-  // }, []);
+  useEffect(() => {
+    Axios.get("http://localhost:3001/UserLogin").then((response) => {
+        setLoginList(response.data);
+    });
+  }, []);
 
-  // const deleteUserLogin = (idUserLogin) => {
-  //   Axios.delete(`http://localhost:3001/deleteUserLogin/${idUserLogin}`);
-  //   alert("You have successfully logged out!");
-  //   console.log(idUserLogin)
-  // }
+  const deleteUserLogin = (idUserLogin) => {
+    Axios.delete(`http://localhost:3001/deleteUserLogin/${idUserLogin}`);
+    alert("You have successfully logged out!");
+    console.log(idUserLogin)
+  }
 
   
   return (
@@ -64,7 +64,7 @@ export const Navbar = ({ changeTab }) => {
         {LoginList.map((user,index) => { 
         if((user.apliemp === "Employer") || (user.apliemp ==="Applicant")){
           return(
-            <a>Logout</a>
+            <a onClick={() => {deleteUserLogin(user.idUserLogin) }}>Logout</a>
           );
          }
         })}
