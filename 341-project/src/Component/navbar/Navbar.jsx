@@ -8,7 +8,6 @@ import './navbar.css'
 
 export const Navbar = ({ changeTab }) => {
   const [LoginList, setLoginList] = useState([]);
-  const [access, setAccess] = useState(false);
 
 
 
@@ -69,12 +68,10 @@ export const Navbar = ({ changeTab }) => {
           );
          }
         })}
-        
           <a onClick={() => { changeTab("Aboutpage") }}>About</a>
         </div>
       </div>
       </div>
-
 
   )
 }
