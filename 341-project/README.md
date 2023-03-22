@@ -37,7 +37,7 @@ npm run devStart\
 |username|VARCHAR(45)|X| Y | X | |
 |password|VARCHAR(45)|X| Y |X | |
 |email|VARCHAR(45)|X| Y |X| |
-|apliemp|VARCHAR(45)|X|Y|X| NULL|
+|apliemp|VARCHAR(45)|X|X|X| NULL|
 
 ## userlogin
 |Column Name | DataType | PK | NN | AI | Default/Expression |
@@ -46,4 +46,4 @@ npm run devStart\
 |username|VARCHAR(45)|X| Y | X | |
 |password|VARCHAR(45)|X| Y |X | |
 |email|VARCHAR(45)|X| Y |X| |
-|apliemp|VARCHAR(45)|X|Y|X|NULL |
+|apliemp|VARCHAR(45)|X|X|X|NULL |
