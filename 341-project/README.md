@@ -32,7 +32,7 @@ npm run devStart\
 
 ## usersu
 |Column Name | DataType | PK | NN | AI | Default/Expression |
-| :-: | :-: | :-: | :-: | :-: |
+| :-: | :-: | :-: | :-: | :-: | :-: |
 |iduserSu| INT | Y | Y | Y | |
 |username|VARCHAR(45)|X| Y | X | |
 |password|VARCHAR(45)|X| Y |X | |
@@ -41,7 +41,7 @@ npm run devStart\
 
 ## userlogin
 |Column Name | DataType | PK | NN | AI | Default/Expression |
-| :-: | :-: | :-: | :-: | :-: |
+| :-: | :-: | :-: | :-: | :-: | :-: |
 |idUserLogin| INT | Y | Y | Y | |
 |username|VARCHAR(45)|X| Y | X | |
 |password|VARCHAR(45)|X| Y |X | |
