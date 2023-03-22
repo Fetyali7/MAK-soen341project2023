@@ -19,7 +19,7 @@ Inside Server folder\
 npm run devStart\
 
 # SQL Tables necessary
-## jobpostings
+## JobPostings
 |Column Name | DataType | PK | NN | AI | Default/Expression |
 | :-: | :-: | :-: | :-: | :-: | :-: |
 |idjobpostings| INT | Y | Y | Y | |
@@ -30,7 +30,7 @@ npm run devStart\
 |location|VARCHAR(45)|X| Y |X| |
 |Employer|VARCHAR(45)|X| Y |X| |
 
-## usersu
+## userSu
 |Column Name | DataType | PK | NN | AI | Default/Expression |
 | :-: | :-: | :-: | :-: | :-: | :-: |
 |iduserSu| INT | Y | Y | Y | |
@@ -39,7 +39,7 @@ npm run devStart\
 |email|VARCHAR(45)|X| Y |X| |
 |apliemp|VARCHAR(45)|X|X|X| NULL|
 
-## userlogin
+## UserLogin
 |Column Name | DataType | PK | NN | AI | Default/Expression |
 | :-: | :-: | :-: | :-: | :-: | :-: |
 |idUserLogin| INT | Y | Y | Y | |
