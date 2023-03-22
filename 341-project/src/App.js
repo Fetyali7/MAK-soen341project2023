@@ -30,7 +30,7 @@ function App() {
         {currentTab === "Application" ? <Application applicationsList={applicationsList} setApplicationsList={setApplicationsList}></Application> : <></>}
         {currentTab === "Finding" ? <Findingpage changeTab={(changeTab) => setCurrentTab(changeTab)} setCurrentForm={setCurrentForm}></Findingpage> : <></>}
         {currentTab === "ApplicantFindPage" ? <ApplicantFindPage changeTab={(changeTab) => setCurrentTab(changeTab)} setCurrentForm={setCurrentForm}></ApplicantFindPage> : <></>}
-        {currentTab === "Signup" ? <Signup signUpList={signUpList} setSignUpList={setSignUpList}></Signup> : <></>}
+        {currentTab === "Signup" ? <Signup changeTab={(changeTab) => setCurrentTab(changeTab)} ></Signup> : <></>}
         {currentTab === "Login" ? <Login loginList={loginList} setLoginList={setLoginList}></Login> : <></>}
         {currentTab === "ApplicantInbox" ? <ApplicantInbox changeTab={(changeTab) => setCurrentTab(changeTab)} setCurrentForm={setCurrentForm}></ApplicantInbox> : <></>}
         {currentTab === "EmployerInbox" ? <EmployerInbox changeTab={(changeTab) => setCurrentTab(changeTab)} setCurrentForm={setCurrentForm}></EmployerInbox> : <></>}

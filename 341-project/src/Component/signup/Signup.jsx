@@ -1,21 +1,48 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import './signup.css'
+import Application from '../Application/Application';
 
-export const Signup = ({signUpList, setSignUpList}) => {
+export const Signup = ( {changeTab} ) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [password2, setPassword2] = useState("");
     const [email, setEmail] = useState("");
-    const [error, setError] = useState(false);
+    const [error, setError] = useState("");
     const [apliemp, setApliEmp] = useState("");
+    const [accounts, setAccounts] = useState([]);
 
-    const createUserSu = () => {
+    useEffect(() => {
+        Axios.get("http://localhost:3001/userSu").then((response) => {
+            setAccounts(response.data);
+        });
+    })
+
+    const createUserSu = (event) => {
+        event.preventDefault();
+        if(!checkInputs()){
+            return;
+        }
+        if(!PasswordConfirm()) {
+            setPassword("");
+            setPassword2("");
+            return;
+        }
+        if(checkAccountExists()) {
+            setUsername("");
+            setPassword("");
+            setPassword2("");
+            setEmail("");
+            return;
+        }
         Axios.post("http://localhost:3001/insertUserSu", {  username:username, 
                                                             password:password,
                                                             email:email,
                                                             apliemp:apliemp,
         }).then(() => {
+            setError("");
             alert("You have successfully signed up!");
+            changeTab("Login");
         });
     }
 
@@ -25,13 +52,15 @@ export const Signup = ({signUpList, setSignUpList}) => {
     const handlePassword = (e) => {
         setPassword(e.target.value);
     }
-    const handlePasswordConfirm = (e) => {
-        if(e.target.value === password) {
-            return;
+    const handlePassword2 = (e) => {
+        setPassword2(e.target.value);
+    }
+    const PasswordConfirm = () => {
+        if(password === password2) {
+            return true;
         }
-        else {
-            setError(true);
-        }
+        setError("Password does not match");
+        return false;
     }
     const handleEmail = (e) => {
         setEmail(e.target.value);
@@ -39,18 +68,52 @@ export const Signup = ({signUpList, setSignUpList}) => {
     const handleApliEmp = (e) =>{
         setApliEmp(e.target.value);
     }
-
-    const handlePostings = () =>  {
-        setSignUpList([...signUpList, {username:username, email:email,
-                                         password:password,apliemp:apliemp,
-                                         }]);
-        console.log(signUpList);
+    const checkInputs = () => {
+        if(username === "") {
+            setError("Cannot have empty fields");
+            return false;
+        }
+        if(password === "") {
+            setError("Cannot have empty fields");
+            return false;
+        }
+        if(password2 === "") {
+            setError("Cannot have empty fields");
+            return false;
+        }
+        if(email === "") {
+            setError("Cannot have empty fields");
+            return false;
+        }
+        if(apliemp === "") {
+            setError("Choose Applicant or Employer");
+            return false;
+        }
+        return true;
+    }
+    const checkAccountExists = () => {
+        var bool = false;
+        accounts.map((acc) => {
+            if(acc.username === username) {
+                setError("Username already exists");
+                console.log("helo")
+                bool = true;
+                return;
+            }
+            if(acc.email === email) {
+                setError("Email already exists");
+                bool = true;
+                return;
+            }
+        });
+        return bool;
     }
 
   return (
     <div className= "signup-form-container">
         <h2>SignUp</h2>
         <form className="signup-form">
+        {error === "" ? <></> : <h4 className='Error'>{error}</h4>}
             <div className='signup-username'>
                 <label>Username</label>
                 <input name="usernameIn" placeholder="Username" value={username} onChange={handleUsername}></input>
@@ -61,7 +124,7 @@ export const Signup = ({signUpList, setSignUpList}) => {
             </div>
             <div className='signup-confirmpassword'>
                 <label>Confirm Password</label>
-                <input placeholder="Enter Password again" value={password} onChange={handlePasswordConfirm}></input>
+                <input placeholder="Enter Password again" value={password2} onChange={handlePassword2}></input>
             </div>
             <div className='signup-email'>
                 <label>Email</label>
@@ -76,21 +139,7 @@ export const Signup = ({signUpList, setSignUpList}) => {
             </div><br></br>
                 <button type="submit" name="signUp" onClick={createUserSu}>SignUp</button>
         </form>
-        <div className='postingform-listing'>
-            {signUpList.length > 0 ? 
-            <div>
-                    {signUpList.map((value) => 
-                    <div className='signupcard'>
-                        <div className='signupcard-username'>Username: {value.username}</div>
-                        <div className='signupcard-email'>email: {value.email}</div>
-                        <div className='signupcard-password'>password: {value.password}</div>
-                        <div className='signupcard-apliemp'>apliemp: {value.apliemp}</div>
-                    </div>)
-                    }
-            </div>
-                : (<div></div>)
-            }
-        </div>
+        
     </div>
   )
 }
