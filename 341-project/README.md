@@ -28,6 +28,7 @@ npm run devStart\
 |employerName|VARCHAR(45)|X| Y |X| |
 |jobDescription|VARCHAR(45)|X|X|X|NULL |
 |location|VARCHAR(45)|X| Y |X| |
+|Employer|VARCHAR(45)|X| Y |X| |
 
 ## usersu
 |Column Name | DataType | PK | NN | AI |
