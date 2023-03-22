@@ -31,19 +31,19 @@ npm run devStart\
 |Employer|VARCHAR(45)|X| Y |X| |
 
 ## usersu
-|Column Name | DataType | PK | NN | AI |
+|Column Name | DataType | PK | NN | AI | Default/Expression |
 | :-: | :-: | :-: | :-: | :-: |
-|iduserSu| INT | Y | Y | Y |
-|username|VARCHAR(45)|X| Y | X |
-|password|VARCHAR(45)|X| Y |X |
-|email|VARCHAR(45)|X| Y |X|
-|apliemp|VARCHAR(45)|X|Y|X|
+|iduserSu| INT | Y | Y | Y | |
+|username|VARCHAR(45)|X| Y | X | |
+|password|VARCHAR(45)|X| Y |X | |
+|email|VARCHAR(45)|X| Y |X| |
+|apliemp|VARCHAR(45)|X|Y|X| NULL|
 
 ## userlogin
-|Column Name | DataType | PK | NN | AI |
+|Column Name | DataType | PK | NN | AI | Default/Expression |
 | :-: | :-: | :-: | :-: | :-: |
-|idUserLogin| INT | Y | Y | Y |
-|username|VARCHAR(45)|X| Y | X |
-|password|VARCHAR(45)|X| Y |X |
-|email|VARCHAR(45)|X| Y |X|
-|apliemp|VARCHAR(45)|X|Y|X|
+|idUserLogin| INT | Y | Y | Y | |
+|username|VARCHAR(45)|X| Y | X | |
+|password|VARCHAR(45)|X| Y |X | |
+|email|VARCHAR(45)|X| Y |X| |
+|apliemp|VARCHAR(45)|X|Y|X|NULL |
