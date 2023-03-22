@@ -7,7 +7,8 @@ const db = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 'password',
-  database : 'mak_database'
+  database : 'mak_database',
+//   socketPath: '/var/run/mysqld/mysqld.sock',         // This is only needed for my chromebook
 });
 
 app.use(cors());
