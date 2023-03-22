@@ -102,9 +102,10 @@ app.post("/insertJobPosting", (req,res) => {
     const employerName = req.body.employerName;
     const jobDescription = req.body.jobDescription;
     const location = req.body.location;
+    const Employer = req.body.Employer;
 
-    const sqlInsert = "INSERT INTO jobpostings (companyName, phoneNumber, employerName, jobDescription, location) VALUES (?,?,?,?,?)";
-    db.query(sqlInsert, [companyName, phoneNumber, employerName, jobDescription, location], (err, result) => {
+    const sqlInsert = "INSERT INTO jobpostings (companyName, phoneNumber, employerName, jobDescription, location, Employer) VALUES (?,?,?,?,?,?)";
+    db.query(sqlInsert, [companyName, phoneNumber, employerName, jobDescription, location, Employer], (err, result) => {
         if(err) {
             console.log(err);
         } else {
