@@ -31,7 +31,7 @@ function App() {
         {currentTab === "Application" ? <Application currentForm={currentForm} setCurrentTab={setCurrentTab}></Application> : <></>}
         {currentTab === "Finding" ? <Findingpage changeTab={(changeTab) => setCurrentTab(changeTab)} setCurrentForm={setCurrentForm}></Findingpage> : <></>}
         {currentTab === "ApplicantFindPage" ? <ApplicantFindPage changeTab={(changeTab) => setCurrentTab(changeTab)} setCurrentForm={setCurrentForm}></ApplicantFindPage> : <></>}
-        {currentTab === "Signup" ? <Signup signUpList={signUpList} setSignUpList={setSignUpList}></Signup> : <></>}
+        {currentTab === "Signup" ? <Signup changeTab={(changeTab) => setCurrentTab(changeTab)} ></Signup> : <></>}
         {currentTab === "Login" ? <Login loginList={loginList} setLoginList={setLoginList}></Login> : <></>}
         {currentTab === "ApplicantInbox" ? <ApplicantInbox currentForm={currentForm} setCurrentTab={setCurrentTab}></ApplicantInbox> : <></>}
         {currentTab === "SubmittedApplications" ? <SubmittedApplications changeTab={(changeTab) => setCurrentTab(changeTab)} setCurrentForm={setCurrentForm}></SubmittedApplications> : <></>}

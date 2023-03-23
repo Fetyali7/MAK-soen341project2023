@@ -118,6 +118,9 @@ label{
   [name~="signUp"]:hover {
     background-color: turquoise;
   }
+  .Error {
+    color: rgb(232, 51, 6);
+  }
 
 @keyframes float {
 	0% {
