@@ -39,7 +39,7 @@ export const Login = ({ changeTab, setlogin}) => {
         }
         else{
             alert("Please try again!");
-            setPass1('');
+            setPass1("");
         }
         
     }
