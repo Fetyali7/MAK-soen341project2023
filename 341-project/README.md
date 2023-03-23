@@ -47,3 +47,30 @@ npm run devStart\
 |password|VARCHAR(45)|X| Y |X | |
 |email|VARCHAR(45)|X| Y |X| |
 |apliemp|VARCHAR(45)|X|X|X|NULL |
+
+
+## Applications
+|Column Name | DataType | PK | NN | AI | Default/Expression |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+|idApplications| INT | Y | Y | Y | |
+|applicantName|VARCHAR(45)|X| Y | X | |
+|phoneNumber|VARCHAR(45)|X| Y |X | |
+|email|VARCHAR(45)|X| Y |X| |
+|applicantDescription|VARCHAR(45)|X| Y |X| |
+|yearsExperience|VARCHAR(45)|X| Y |X| |
+|location|VARCHAR(45)|X| Y |X| |
+|Applicant|VARCHAR(45)|X| Y |X| |
+|Employer|VARCHAR(45)|X| Y |X| |
+|companyName|VARCHAR(45)|X|X|X| NULL |
+|jobDescription|VARCHAR(45)|X| X |X| NULL|
+
+
+## Interviews
+|Column Name | DataType | PK | NN | AI | Default/Expression |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+|companyName|VARCHAR(45)|X| Y | X | |
+|jobDescription|VARCHAR(45)|X|Y|X| |
+|phoneNumber|VARCHAR(45)|X| Y |X | |
+|location|VARCHAR(45)|X| Y |X| |
+|Employer|VARCHAR(45)|X| Y |X| |
+|Applicant|VARCHAR(45)|X| Y |X| |
