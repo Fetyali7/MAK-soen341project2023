@@ -71,7 +71,5 @@ npm run devStart\
 |idInterviews| INT | Y | Y | Y | |
 |companyName|VARCHAR(45)|X| Y | X | |
 |jobDescription|VARCHAR(45)|X|Y|X| |
-|phoneNumber|VARCHAR(45)|X| Y |X | |
-|location|VARCHAR(45)|X| Y |X| |
 |Employer|VARCHAR(45)|X| Y |X| |
 |Applicant|VARCHAR(45)|X| Y |X| |
