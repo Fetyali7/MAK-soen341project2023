@@ -1,0 +1,151 @@
+input[type=text] {
+    width: 30%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url(https://raw.githubusercontent.com/Fetyali7/MAK-soen341project2023/main/341-project/public/searchicon.webp);
+    background-size: 2rem;
+    background-position: 3px 1px; 
+    background-repeat: no-repeat;
+    padding: 10px 20px 5px 40px;
+}
+
+.findingpage-search button {
+    cursor: pointer;
+    background: #fff;
+    margin-left: .5rem;
+    line-height: 1px;
+    padding: 1rem;
+    color: #000;
+    border: 2px solid var(--color-navbar-hover);
+    transition-duration: .4s;
+}
+
+.findingpage-search button:hover {
+    background-color: var(--color-navbar-hover);
+    color:#000;
+}
+
+.findingpage {
+    display: flex;
+    flex-direction: column;
+}
+
+.findingpage-search {
+    display: flex;
+    flex-direction: row;
+}
+
+.findingpage-listing {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.findingcard {
+    padding: .5rem;
+    font-weight: 400;
+}
+
+.findingcard-companyname {
+    flex: 2;
+    width: 100%;
+    background: var(--color-login-background);
+    padding: 1rem 1rem;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    line-height: 30px;
+    color: #000;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    border: 2px solid var(--color-navbar-background);
+    outline: none;
+    border-bottom: none;
+}
+
+.findingcard-phonenumber {
+    flex: 2;
+    width: 100%;
+    background: var(--color-login-background);
+    padding: 0 1rem;
+    outline: none;
+    font-size: 15px;
+    line-height: 30px;
+    color: #000;
+    border: 2px solid var(--color-navbar-background);
+    border-top: none;
+    border-bottom: none;
+    text-align: center;
+}
+
+.findingcard-employer {
+    flex: 2;
+    width: 100%;
+    background: var(--color-login-background);
+    padding: 0 1rem;
+    outline: none;
+    font-size: 15px;
+    line-height: 30px;
+    color: #000;
+    border-left: none;
+    border: 2px solid var(--color-navbar-background);
+    border-top: none;
+    border-bottom: none;
+    text-align: center;
+}
+
+.findingcard-jobdescription {
+    flex: 2;
+    width: 100%;
+    background: var(--color-login-background);
+    padding: 0 1rem;
+    outline: none;
+    font-size: 15px;
+    line-height: 30px;
+    color: #000;
+    border-left: none;
+    border: 2px solid var(--color-navbar-background);
+    border-top: none;
+    border-bottom: none;
+}
+
+.findingcard-location {
+    flex: 2;
+    width: 100%;
+    background: var(--color-login-background);
+    border-bottom-left-radius: 5px; 
+    border-bottom-right-radius: 5px;
+    padding: 0 1rem;
+    outline: none;
+    font-size: 15px;
+    line-height: 30px;
+    color: #000;
+    border-left: none;
+    border: 2px solid var(--color-navbar-background);
+    border-top: none;
+    text-align: right;
+}
+
+ [name~="delBut"]{
+    display: inline-block;
+    background-color: #7b38d8;
+    padding: 0px;
+    width: 150px;
+    color: #ffffff;
+    text-align: center;
+    border: 4px double #cccccc;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 5px;
+    -webkit-transition: all 0.5s; /* add this line, chrome, safari, etc */
+    -moz-transition: all 0.5s; /* add this line, firefox */
+    -o-transition: all 0.5s; /* add this line, opera */
+    transition: all 0.5s; /* add this line */
+  }
+  [name~="delBut"]:hover {
+    background-color: red;
+  }

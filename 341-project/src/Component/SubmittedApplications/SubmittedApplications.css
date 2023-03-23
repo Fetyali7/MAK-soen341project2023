@@ -65,6 +65,38 @@ input[type=text] {
     outline: none;
     border-bottom: none;
 }
+
+.findingcard-phonenumber {
+    flex: 2;
+    width: 100%;
+    background: var(--color-login-background);
+    padding: 0 1rem;
+    outline: none;
+    font-size: 15px;
+    line-height: 30px;
+    color: #000;
+    border: 2px solid var(--color-navbar-background);
+    border-top: none;
+    border-bottom: none;
+    text-align: center;
+}
+
+.findingcard-employer {
+    flex: 2;
+    width: 100%;
+    background: var(--color-login-background);
+    border-bottom-left-radius: 5px; 
+    border-bottom-right-radius: 5px;
+    padding: 0 1rem;
+    outline: none;
+    font-size: 15px;
+    line-height: 30px;
+    color: #000;
+    border-left: none;
+    border: 2px solid var(--color-navbar-background);
+    border-top: none;
+    text-align: right;
+}
 .findingcard-position{
     flex: 2;
     width: 100%;
@@ -81,52 +113,7 @@ input[type=text] {
     outline: none;
     border-bottom: none;
 }
-
-.findingcard-info {
-    flex: 2;
-    width: 100%;
-    background: var(--color-login-background);
-    padding: 0 1rem;
-    outline: none;
-    font-size: 15px;
-    line-height: 30px;
-    color: #000;
-    border-left: none;
-    border: 2px solid var(--color-navbar-background);
-    border-top: none;
-    border-bottom: none;
-}
-
-.findingcard-email {
-    flex: 2;
-    width: 100%;
-    background: var(--color-login-background);
-    padding: 0 1rem;
-    outline: none;
-    font-size: 15px;
-    line-height: 30px;
-    color: #000;
-    border-left: none;
-    border: 2px solid var(--color-navbar-background);
-    border-top: none;
-    border-bottom: none;
-}
-
-.findingcard-applicantdescription {
-    flex: 2;
-    width: 100%;
-    background: var(--color-login-background);
-    padding: 0 1rem;
-    outline: none;
-    font-size: 15px;
-    line-height: 30px;
-    color: #000;
-    border-left: none;
-    border: 2px solid var(--color-navbar-background);
-    border-top: none;
-    border-bottom: none;
-}
-.findingcard-yearsexperience {
+.findingcard-jobdescription {
     flex: 2;
     width: 100%;
     background: var(--color-login-background);
@@ -155,7 +142,7 @@ input[type=text] {
     border-left: none;
     border: 2px solid var(--color-navbar-background);
     border-top: none;
-    text-align: left;
+    text-align: right;
 }
 
  [name~="delBut"]{

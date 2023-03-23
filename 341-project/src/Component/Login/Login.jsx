@@ -5,10 +5,6 @@ export const Login = ({ changeTab, setlogin}) => {
     const [email1, setEmail1] = useState('');
     const [pass1, setPass1] = useState('');
     const [LoginList, setLoginList] = useState([]);
-    // const [email, setEmail]= useState();
-    // const [password, setPass]= useState();
-    // const [username, setUser]= useState();
-    // const [apliemp, setApliemp]= useState();
     useEffect(() => {
         Axios.get("http://localhost:3001/userSu").then((response) => {
             setLoginList(response.data);
@@ -21,9 +17,9 @@ export const Login = ({ changeTab, setlogin}) => {
                                                             email:email1,
                                                             apliemp:apliemp1,
         }).then(() => {
-            window.location.reload();
             alert("Welcome " + username1 + "!\nYou have successfully logged in!");
-            // changeTab("Home");
+            window.location.reload();
+            changeTab("Home");
         });
     }
     const handleEmail = (e) => {
@@ -39,15 +35,10 @@ export const Login = ({ changeTab, setlogin}) => {
         event.preventDefault();
         const loginUser = LoginList.find(user => user.email===email1);
         if(loginUser.email===email1 && loginUser.password===pass1){
-            // setUser(loginUser.username);
-            // setPass(loginUser.password);
-            // setEmail(loginUser.email);
-            // setApliemp(loginUser.apliemp);
-            createUserLogin(loginUser.username, loginUser.password, loginUser.email, loginUser.apliemp);
+            createUserLogin(loginUser.username,loginUser.password,loginUser.email,loginUser.apliemp);
         }
         else{
             alert("Please try again!");
-            setPass1("");
         }
         
     }

@@ -1,35 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
-import './ApplicantInbox.css'
+import './SubmittedApplications.css'
 
-export const ApplicantInbox= ({ currentForm, setCurrentTab }) => {
+export const SubmittedApplications= ({ changeTab, setCurrentForm }) => {
 //   const [sortCompany, setSortCompany] = useState("");
 //   const [sortPosition, setSortPosition] = useState("");
   const [search, setSearch] = useState("");
-  // const [loginList, setLoginList] = useState([]);
+  
 
-  const [InterviewsList, setInterviewsList] = useState([]);
+  const [ApplicantList, setApplicantList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
-  const [loginusername, setLoginUsername] = useState("");
+  const [loginusername, setLoginUsername] = useState("")
 
     useEffect(() => {
-        Axios.get("http://localhost:3001/Interviews").then((response) => {
-            setInterviewsList(response.data);
-            setFilteredList(response.data);
-        });
+    Axios.get("http://localhost:3001/Applications").then((response) => {
+        setApplicantList(response.data);
+        setFilteredList(response.data);
+    });
     }, []);
     useEffect(() => {
-        Axios.get("http://localhost:3001/UserLogin").then((response) => {
-            setLoginUsername(response.data.find(user => user.username).username);
-        });
-      }, []);
+    Axios.get("http://localhost:3001/UserLogin").then((response) => {
+        setLoginUsername(response.data.find(user => user.username).username);
+    });
+    }, []);
 
   const handleSearch = (e) => {
     // if(e.target.value === "") {
     //   setFilteredList(jobList);
     // }
     console.log(e.target.value)
-    setSearch(e.target.value);
+    // setSearch(e.target.value);
   }
   const handleSortCompany = () => {
     // setSortPosition("")
@@ -43,7 +43,7 @@ export const ApplicantInbox= ({ currentForm, setCurrentTab }) => {
   }
 
   const handleFilterName = () => {
-    let filtered = InterviewsList.filter(job => {
+    let filtered = ApplicantList.filter(job => {
       return job.companyName.toLowerCase().includes(search.toLowerCase());
     })
   console.log(filtered);
@@ -51,12 +51,13 @@ export const ApplicantInbox= ({ currentForm, setCurrentTab }) => {
   }
 
   const handleFilterPosition = () => {
-    let filtered = InterviewsList.filter(job => {
+    let filtered = ApplicantList.filter(job => {
       return job.jobDescription.toLowerCase().includes(search.toLowerCase());
     })
   console.log(filtered);
   setFilteredList(filtered);
   }
+
 
 
   return (
@@ -65,30 +66,28 @@ export const ApplicantInbox= ({ currentForm, setCurrentTab }) => {
         <input type="text" name="search" placeholder="Search..." onChange={handleSearch}></input>
         <button onClick={handleSortCompany}>Search Company</button>
         <button onClick={handleSortPosition}>Search Position</button>
-        <button onClick={() => setFilteredList(InterviewsList)}> X </button>
+        <button onClick={() => setFilteredList(ApplicantList)}> X </button>
       </div>
-      
       <div className='findingpage-listing'>
-        {InterviewsList.length > 0 ? (
+          <h1>You Have Applied To The Following Companies:</h1>
+        {ApplicantList.length > 0 ? (
           <div> {filteredList.reverse().map((value) => (
             <div>
             {value.Applicant === loginusername &&
             <React.Fragment>
             <div className='findingcard'>
-              <div className='findingcard-companyname'>Congratulations!</div>
-              <div className='findingcard-phonenumber'>You've been selected for an interview for the following position! The Employer will contact you via email to set up a time for an interview!</div>
-              <div className='findingcard-jobdescription'>Company: {value.companyName}</div>
-              <div className='findingcard-jobdescription'>Description: {value.jobDescription}</div>
-              <div className='findingcard-location'>Employer Name: {value.Employer}</div>
+              <div className='findingcard-companyname'>Company: {value.companyName}</div>
+              <div className='findingcard-position'>Description: {value.jobDescription}</div>
+              <div className='findingcard-employer'>Employer Name: {value.Employer}</div>
             </div>
             </React.Fragment>
             }</div>
           ))}
           </div>
-        ) : (<div>This is Your Applicant Inbox!</div>)
+        ) : (<div>You haven't applied to any companies!</div>)
         }
         </div>
     </div>
   )
 }
-export default ApplicantInbox
+export default SubmittedApplications
