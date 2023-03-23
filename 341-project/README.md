@@ -68,6 +68,7 @@ npm run devStart\
 ## Interviews
 |Column Name | DataType | PK | NN | AI | Default/Expression |
 | :-: | :-: | :-: | :-: | :-: | :-: |
+|idInterviews| INT | Y | Y | Y | |
 |companyName|VARCHAR(45)|X| Y | X | |
 |jobDescription|VARCHAR(45)|X|Y|X| |
 |phoneNumber|VARCHAR(45)|X| Y |X | |
