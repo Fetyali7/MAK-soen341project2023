@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
-import { FindingPage } from '..'
 import './ApplicantInbox.css'
 
-export const ApplicantInbox= ({ changeTab, setCurrentForm }) => {
-  const [sortCompany, setSortCompany] = useState("");
-  const [sortPosition, setSortPosition] = useState("");
+export const ApplicantInbox= ({ currentForm, setCurrentTab }) => {
+//   const [sortCompany, setSortCompany] = useState("");
+//   const [sortPosition, setSortPosition] = useState("");
   const [search, setSearch] = useState("");
+  const [loginList, setLoginList] = useState([]);
 
-  const [jobList, setJobList] = useState([]);
+  const [InterviewsList, setInterviewsList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
+  const [loginusername, setLoginUsername] = useState("")
 
-    // useEffect(() => {
-    //     Axios.get("http://localhost:3001/JobPostings").then((response) => {
-    //         setJobList(response.data);
-    //         setFilteredList(response.data);
-    //     });
-    // }, []);
+    useEffect(() => {
+        Axios.get("http://localhost:3001/Interviews").then((response) => {
+            setInterviewsList(response.data);
+            setFilteredList(response.data);
+        });
+    }, []);
+    useEffect(() => {
+        Axios.get("http://localhost:3001/UserLogin").then((response) => {
+            setLoginList(response.data);
+            setLoginUsername(response.data.find(user => user.username).username);
+        });
+      }, []);
 
   const handleSearch = (e) => {
     // if(e.target.value === "") {
@@ -26,18 +33,18 @@ export const ApplicantInbox= ({ changeTab, setCurrentForm }) => {
     setSearch(e.target.value);
   }
   const handleSortCompany = () => {
-    setSortPosition("")
+    // setSortPosition("")
     //setSortCompany(search);
     handleFilterName();
   }
   const handleSortPosition = () => {
-    setSortCompany("");
+    // setSortCompany("");
     //setSortPosition(search);
     handleFilterPosition();
   }
 
   const handleFilterName = () => {
-    let filtered = jobList.filter(job => {
+    let filtered = InterviewsList.filter(job => {
       return job.companyName.toLowerCase().includes(search.toLowerCase());
     })
   console.log(filtered);
@@ -45,16 +52,11 @@ export const ApplicantInbox= ({ changeTab, setCurrentForm }) => {
   }
 
   const handleFilterPosition = () => {
-    let filtered = jobList.filter(job => {
+    let filtered = InterviewsList.filter(job => {
       return job.jobDescription.toLowerCase().includes(search.toLowerCase());
     })
   console.log(filtered);
   setFilteredList(filtered);
-  }
-
-  const Apply = (idJobPostings) => {
-    // Axios.delete(`http://localhost:3001/deleteJobPostings/${idJobPostings}`);
-    // console.log(idJobPostings)
   }
 
 
@@ -64,19 +66,27 @@ export const ApplicantInbox= ({ changeTab, setCurrentForm }) => {
         <input type="text" name="search" placeholder="Search..." onChange={handleSearch}></input>
         <button onClick={handleSortCompany}>Search Company</button>
         <button onClick={handleSortPosition}>Search Position</button>
-        <button onClick={() => setFilteredList(jobList)}> X </button>
+        <button onClick={() => setFilteredList(InterviewsList)}> X </button>
       </div>
+      
       <div className='findingpage-listing'>
-        {jobList.length > 0 ? (
-          <div> {filteredList.reverse().map((value) => 
+        {InterviewsList.length > 0 ? (
+          <div> {filteredList.reverse().map((value) => (
+            <div>
+            {value.Applicant === loginusername &&
+            <React.Fragment>
             <div className='findingcard'>
-              <div className='findingcard-companyname'>Company: {value.companyName}</div>
-              <div className='findingcard-phonenumber'>Phone Number: {value.phoneNumber}</div>
-              <div className='findingcard-employer'>Employer Name: {value.employerName}</div>
+              <div className='findingcard-companyname'>Congratulations!</div>
+              <div className='findingcard-phonenumber'>You've been selected for an interview for the following position! The Employer will contact you via email to set up a time for an interview!</div>
+              <div className='findingcard-jobdescription'>Company: company={value.companyName}</div>
               <div className='findingcard-jobdescription'>Description: {value.jobDescription}</div>
+              <div className='findingcard-jobdescription'>Phone Number: {value.phoneNumber}</div>
+              <div className='findingcard-jobdescription'>Employer Name: {value.employerName}</div>
               <div className='findingcard-location'>Location: {value.location}</div>
             </div>
-          )}
+            </React.Fragment>
+            }</div>
+          ))}
           </div>
         ) : (<div>This is Your Applicant Inbox!</div>)
         }

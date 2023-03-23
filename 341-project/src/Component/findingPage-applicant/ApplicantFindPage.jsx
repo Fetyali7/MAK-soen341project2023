@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
-import { FindingPage } from '..'
 import './ApplicantFindPage.css'
 
 export const ApplicantFindPage= ({ changeTab, setCurrentForm }) => {
-  const [sortCompany, setSortCompany] = useState("");
-  const [sortPosition, setSortPosition] = useState("");
+//   const [sortCompany, setSortCompany] = useState("");
+//   const [sortPosition, setSortPosition] = useState("");
   const [search, setSearch] = useState("");
 
   const [jobList, setJobList] = useState([]);
@@ -26,12 +25,12 @@ export const ApplicantFindPage= ({ changeTab, setCurrentForm }) => {
     setSearch(e.target.value);
   }
   const handleSortCompany = () => {
-    setSortPosition("")
+    // setSortPosition("")
     //setSortCompany(search);
     handleFilterName();
   }
   const handleSortPosition = () => {
-    setSortCompany("");
+    // setSortCompany("");
     //setSortPosition(search);
     handleFilterPosition();
   }
@@ -52,9 +51,9 @@ export const ApplicantFindPage= ({ changeTab, setCurrentForm }) => {
   setFilteredList(filtered);
   }
 
-  const Apply = (idJobPostings) => {
-    // Axios.delete(`http://localhost:3001/deleteJobPostings/${idJobPostings}`);
-    // console.log(idJobPostings)
+  const Apply = (e) => {
+    changeTab("Application");
+    setCurrentForm(e);
   }
 
 
@@ -75,7 +74,7 @@ export const ApplicantFindPage= ({ changeTab, setCurrentForm }) => {
               <div className='findingcard-employer'>Employer Name: {value.employerName}</div>
               <div className='findingcard-jobdescription'>Description: {value.jobDescription}</div>
               <div className='findingcard-location'>Location: {value.location}</div>
-              <button name="delBut" onClick={() => {Apply(value.idJobPostings); window.location.reload(true); window.location = '341-project/src/Component/findingPage/FindingPage.jsx'}}> Apply </button>
+              <button name="delBut" onClick={() => {Apply(value)}}> Apply</button>
             </div>
           )}
           </div>

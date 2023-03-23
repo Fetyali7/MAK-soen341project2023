@@ -134,6 +134,63 @@ app.put("/update", (req, res) => {
     );
   });
 
+  /**For Applications */
+app.get("/Applications", (req, res) => {
+    const sqlSelect = "SELECT * FROM Applications";
+    db.query(sqlSelect, (err, result) => {
+        res.send(result);
+    })
+})
+
+app.post("/insertApplication", (req,res) => {
+    const applicantName = req.body.applicantName;
+    const phoneNumber = req.body.phoneNumber;
+    const email = req.body.email;
+    const applicantDescription = req.body.applicantDescription;
+    const yearsExperience = req.body.yearsExperience;
+    const location = req.body.location;
+    const Applicant = req.body.Applicant;
+    const Employer = req.body.Employer;
+    const companyName = req.body.companyName;
+    const jobDescription = req.body.jobDescription;
+
+    const sqlInsert = "INSERT INTO Applications (applicantName, phoneNumber, email, applicantDescription, yearsExperience, location, Applicant, Employer, companyName, jobDescription) VALUES (?,?,?,?,?,?,?,?,?,?)";
+    db.query(sqlInsert, [applicantName, phoneNumber, email, applicantDescription, yearsExperience, location, Applicant, Employer, companyName, jobDescription], (err, result) => {
+        if(err) {
+            console.log(err);
+        } else {
+            res.send("Values inserted");
+        }
+    });
+});
+/**For Interview */
+app.get("/Interviews", (req, res) => {
+    const sqlSelect = "SELECT * FROM Interviews";
+    db.query(sqlSelect, (err, result) => {
+        res.send(result);
+    })
+})
+
+app.post("/insertInterview", (req,res) => {
+    const companyName = req.body.companyName;
+    const jobDescription = req.body.jobDescription;
+    const phoneNumber = req.body.phoneNumber;
+    const location = req.body.location;
+    const Employer = req.body.Employer;
+    const Applicant = req.body.Applicant;
+    
+    
+
+    const sqlInsert = "INSERT INTO Interviews (companyName, jobDescription, phoneNumber, location, Employer, Applicant) VALUES (?,?,?,?,?,?)";
+    db.query(sqlInsert, [companyName, jobDescription, phoneNumber, location, Employer, Applicant], (err, result) => {
+        if(err) {
+            console.log(err);
+        } else {
+            res.send("Values inserted");
+        }
+    });
+});
+
 app.listen(3001, () => {
     console.log("Running on port 3001");
 })

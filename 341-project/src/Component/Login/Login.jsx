@@ -5,23 +5,19 @@ export const Login = ({ changeTab, setlogin}) => {
     const [email1, setEmail1] = useState('');
     const [pass1, setPass1] = useState('');
     const [LoginList, setLoginList] = useState([]);
-    const [email, setEmail]= useState();
-    const [password, setPass]= useState();
-    const [username, setUser]= useState();
-    const [apliemp, setApliemp]= useState();
     useEffect(() => {
         Axios.get("http://localhost:3001/userSu").then((response) => {
             setLoginList(response.data);
         });
     }, []);
 
-    const createUserLogin = () => {
-        Axios.post("http://localhost:3001/insertUserLogin", {  username:username, 
-                                                            password:password,
-                                                            email:email,
-                                                            apliemp:apliemp,
+    const createUserLogin = (username1, password1, email1, apliemp1) => {
+        Axios.post("http://localhost:3001/insertUserLogin", {  username:username1, 
+                                                            password:password1,
+                                                            email:email1,
+                                                            apliemp:apliemp1,
         }).then(() => {
-            alert("Welcome " + username + "!\nYou have successfully logged in!");
+            alert("Welcome " + username1 + "!\nYou have successfully logged in!");
             window.location.reload();
             changeTab("Home");
         });
@@ -35,14 +31,11 @@ export const Login = ({ changeTab, setlogin}) => {
     }
 
     
-    const handleLogin = () => {
+    const handleLogin = (event) => {
+        event.preventDefault();
         const loginUser = LoginList.find(user => user.email===email1);
         if(loginUser.email===email1 && loginUser.password===pass1){
-            setUser(loginUser.username);
-            setPass(loginUser.password);
-            setEmail(loginUser.email);
-            setApliemp(loginUser.apliemp);
-            createUserLogin();
+            createUserLogin(loginUser.username,loginUser.password,loginUser.email,loginUser.apliemp);
         }
         else{
             alert("Please try again!");

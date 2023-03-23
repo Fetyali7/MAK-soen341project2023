@@ -62,7 +62,7 @@ export const Navbar = ({ changeTab }) => {
         {LoginList.map((user,index) => { 
           if(user.apliemp === "Applicant"){
             return(
-            <a href="#JobApp" onClick={() => { changeTab("Application") }}>Application</a>
+            <a href="#SubApp" onClick={() => { changeTab("SubmittedApplications") }}>Submitted</a>
             );
             }
         })}
