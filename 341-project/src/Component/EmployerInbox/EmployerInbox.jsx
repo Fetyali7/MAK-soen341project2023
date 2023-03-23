@@ -64,11 +64,11 @@ export const EmployerInbox= ({ changeTab, setCurrentForm }) => {
   }
 
   const Interview = () => {
-    Axios.post("http://localhost:3001/insertInterview", {  companyName:jobList.find(user =>user.companyName).companyName,
-                                                            jobDescription:jobList.find(user => user.jobDescription).jobDescription,
-                                                            phoneNumber:jobList.find(user => user.phoneNumber).phoneNumber,
-                                                            location:jobList.find(user => user.location).location,
-                                                            Employer:jobList.find(user => user.Employer).Employer,
+    Axios.post("http://localhost:3001/insertInterview", {  companyName:jobList.find(user =>user.Employer===(loginList.find(user => user.username)).username).companyName,
+                                                            jobDescription:jobList.find(user =>user.Employer===(loginList.find(user => user.username)).username).jobDescription,
+                                                            phoneNumber:jobList.find(user => user.Employer===(loginList.find(user => user.username)).username).phoneNumber,
+                                                            location:jobList.find(user => user.Employer===(loginList.find(user => user.username)).username).location,
+                                                            Employer:jobList.find(user => user.Employer===(loginList.find(user => user.username)).username).Employer,
                                                             Applicant:ApplicantsList.find(user => user.Applicant).Applicant,
                                                             
     }).then(() => {

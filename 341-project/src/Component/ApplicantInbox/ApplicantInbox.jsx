@@ -78,10 +78,10 @@ export const ApplicantInbox= ({ currentForm, setCurrentTab }) => {
             <div className='findingcard'>
               <div className='findingcard-companyname'>Congratulations!</div>
               <div className='findingcard-phonenumber'>You've been selected for an interview for the following position! The Employer will contact you via email to set up a time for an interview!</div>
-              <div className='findingcard-jobdescription'>Company: company={value.companyName}</div>
+              <div className='findingcard-jobdescription'>Company: {value.companyName}</div>
               <div className='findingcard-jobdescription'>Description: {value.jobDescription}</div>
               <div className='findingcard-jobdescription'>Phone Number: {value.phoneNumber}</div>
-              <div className='findingcard-jobdescription'>Employer Name: {value.employerName}</div>
+              <div className='findingcard-jobdescription'>Employer Name: {value.Employer}</div>
               <div className='findingcard-location'>Location: {value.location}</div>
             </div>
             </React.Fragment>
