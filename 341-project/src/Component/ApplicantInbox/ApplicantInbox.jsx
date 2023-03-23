@@ -6,11 +6,11 @@ export const ApplicantInbox= ({ currentForm, setCurrentTab }) => {
 //   const [sortCompany, setSortCompany] = useState("");
 //   const [sortPosition, setSortPosition] = useState("");
   const [search, setSearch] = useState("");
-  const [loginList, setLoginList] = useState([]);
+  // const [loginList, setLoginList] = useState([]);
 
   const [InterviewsList, setInterviewsList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
-  const [loginusername, setLoginUsername] = useState("")
+  const [loginusername, setLoginUsername] = useState("");
 
     useEffect(() => {
         Axios.get("http://localhost:3001/Interviews").then((response) => {
@@ -20,7 +20,6 @@ export const ApplicantInbox= ({ currentForm, setCurrentTab }) => {
     }, []);
     useEffect(() => {
         Axios.get("http://localhost:3001/UserLogin").then((response) => {
-            setLoginList(response.data);
             setLoginUsername(response.data.find(user => user.username).username);
         });
       }, []);
@@ -80,9 +79,7 @@ export const ApplicantInbox= ({ currentForm, setCurrentTab }) => {
               <div className='findingcard-phonenumber'>You've been selected for an interview for the following position! The Employer will contact you via email to set up a time for an interview!</div>
               <div className='findingcard-jobdescription'>Company: {value.companyName}</div>
               <div className='findingcard-jobdescription'>Description: {value.jobDescription}</div>
-              <div className='findingcard-jobdescription'>Phone Number: {value.phoneNumber}</div>
-              <div className='findingcard-jobdescription'>Employer Name: {value.Employer}</div>
-              <div className='findingcard-location'>Location: {value.location}</div>
+              <div className='findingcard-location'>Employer Name: {value.Employer}</div>
             </div>
             </React.Fragment>
             }</div>
@@ -90,7 +87,7 @@ export const ApplicantInbox= ({ currentForm, setCurrentTab }) => {
           </div>
         ) : (<div>This is Your Applicant Inbox!</div>)
         }
-      </div>
+        </div>
     </div>
   )
 }

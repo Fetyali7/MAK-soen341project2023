@@ -174,15 +174,13 @@ app.get("/Interviews", (req, res) => {
 app.post("/insertInterview", (req,res) => {
     const companyName = req.body.companyName;
     const jobDescription = req.body.jobDescription;
-    const phoneNumber = req.body.phoneNumber;
-    const location = req.body.location;
     const Employer = req.body.Employer;
     const Applicant = req.body.Applicant;
     
     
 
-    const sqlInsert = "INSERT INTO Interviews (companyName, jobDescription, phoneNumber, location, Employer, Applicant) VALUES (?,?,?,?,?,?)";
-    db.query(sqlInsert, [companyName, jobDescription, phoneNumber, location, Employer, Applicant], (err, result) => {
+    const sqlInsert = "INSERT INTO Interviews (companyName, jobDescription, Employer, Applicant) VALUES (?,?,?,?)";
+    db.query(sqlInsert, [companyName, jobDescription, Employer, Applicant], (err, result) => {
         if(err) {
             console.log(err);
         } else {

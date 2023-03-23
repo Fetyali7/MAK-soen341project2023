@@ -63,13 +63,11 @@ export const EmployerInbox= ({ changeTab, setCurrentForm }) => {
   setFilteredList(filtered);
   }
 
-  const Interview = () => {
-    Axios.post("http://localhost:3001/insertInterview", {  companyName:jobList.find(user =>user.Employer===(loginList.find(user => user.username)).username).companyName,
-                                                            jobDescription:jobList.find(user =>user.Employer===(loginList.find(user => user.username)).username).jobDescription,
-                                                            phoneNumber:jobList.find(user => user.Employer===(loginList.find(user => user.username)).username).phoneNumber,
-                                                            location:jobList.find(user => user.Employer===(loginList.find(user => user.username)).username).location,
-                                                            Employer:jobList.find(user => user.Employer===(loginList.find(user => user.username)).username).Employer,
-                                                            Applicant:ApplicantsList.find(user => user.Applicant).Applicant,
+  const Interview = (value) => {
+    Axios.post("http://localhost:3001/insertInterview", {  companyName:value.companyName,
+                                                            jobDescription:value.jobDescription,
+                                                            Employer:value.Employer,
+                                                            Applicant:value.Applicant,
                                                             
     }).then(() => {
         alert("Sucess");
@@ -101,7 +99,7 @@ export const EmployerInbox= ({ changeTab, setCurrentForm }) => {
               <div className='findingcard-yearsexperience'>Years Of Experience: {value.yearsExperience}</div>
               <div className='findingcard-location'>Location: {value.location}</div>
 
-              <button name="delBut" onClick={() => {Interview()}}> Interview</button>
+              <button name="delBut" onClick={() => {Interview(value)}}> Interview</button>
               </div>
               </React.Fragment>
             }  
