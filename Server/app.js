@@ -163,7 +163,7 @@ app.post("/insertApplication", (req,res) => {
         }
     });
 });
-/**For Interview */
+/**For Interviews */
 app.get("/Interviews", (req, res) => {
     const sqlSelect = "SELECT * FROM Interviews";
     db.query(sqlSelect, (err, result) => {
@@ -190,7 +190,6 @@ app.post("/insertInterview", (req,res) => {
         }
     });
 });
-
 app.listen(3001, () => {
     console.log("Running on port 3001");
 })
