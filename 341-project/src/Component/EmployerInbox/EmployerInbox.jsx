@@ -2,13 +2,10 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import './EmployerInbox.css'
 
-export const EmployerInbox= ({ changeTab, setCurrentForm }) => {
-//   const [sortCompany, setSortCompany] = useState("");
-//   const [sortPosition, setSortPosition] = useState("");
+export const EmployerInbox= ({ loginList }) => {
   const [search, setSearch] = useState("");
 
   const [ApplicantsList, setApplicantsList] = useState([]);
-  const [loginList, setLoginList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [jobList, setJobList] = useState([]);
 
@@ -18,12 +15,8 @@ export const EmployerInbox= ({ changeTab, setCurrentForm }) => {
             setFilteredList(response.data);
         });
     }, []);
+
     useEffect(() => {
-        Axios.get("http://localhost:3001/UserLogin").then((response) => {
-            setLoginList(response.data);
-        });
-      }, []);
-      useEffect(() => {
         Axios.get("http://localhost:3001/JobPostings").then((response) => {
             setJobList(response.data);
         });

@@ -2,27 +2,18 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import './findingpage.css'
 
-export const Findingpage= ({ changeTab, setCurrentForm }) => {
-  const [sortCompany, setSortCompany] = useState("");
-  const [sortPosition, setSortPosition] = useState("");
+export const Findingpage= ({ changeTab, setCurrentForm, loginList }) => {
   const [search, setSearch] = useState("");
 
   const [jobList, setJobList] = useState([]);
-  const [loginList, setLoginList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
 
-    useEffect(() => {
-        Axios.get("http://localhost:3001/JobPostings").then((response) => {
-            setJobList(response.data);
-            setFilteredList(response.data);
-        });
-    }, []);
-
-    useEffect(() => {
-      Axios.get("http://localhost:3001/UserLogin").then((response) => {
-          setLoginList(response.data);
+  useEffect(() => {
+      Axios.get("http://localhost:3001/JobPostings").then((response) => {
+          setJobList(response.data);
+          setFilteredList(response.data);
       });
-    }, []);
+  }, []);
 
   const handleSearch = (e) => {
     // if(e.target.value === "") {
@@ -32,13 +23,9 @@ export const Findingpage= ({ changeTab, setCurrentForm }) => {
     setSearch(e.target.value);
   }
   const handleSortCompany = () => {
-    setSortPosition("")
-    //setSortCompany(search);
     handleFilterName();
   }
   const handleSortPosition = () => {
-    setSortCompany("");
-    //setSortPosition(search);
     handleFilterPosition();
   }
 
