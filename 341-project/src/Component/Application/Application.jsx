@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { ChangeEvent,useEffect, useState } from 'react'
 import Axios from 'axios';
 import './Application.css'
+
 
 export const Application = ({currentForm, setCurrentTab}) => {
     const [applicantName, setApplicantName] = useState("")
@@ -13,6 +14,8 @@ export const Application = ({currentForm, setCurrentTab}) => {
     const [Applicant, setApplicant] = useState("")
     // const [Employer, setEmployer] = useState(currentForm.Employer)
     
+
+
     useEffect(() => {
         Axios.get("http://localhost:3001/UserLogin").then((response) => {
             // setLoginList(response.data);
@@ -21,23 +24,31 @@ export const Application = ({currentForm, setCurrentTab}) => {
         });
       }, []);
 
+
+
     const createApplication = () => {
-        Axios.post("http://localhost:3001/insertApplication", {  applicantName:applicantName, 
-                                                                phoneNumber:phoneNumber,
-                                                                email:email,
-                                                                applicantDescription:applicantDescription,
-                                                                yearsExperience:yearsExperience,
-                                                                location:location,
-                                                                Applicant:Applicant,
-                                                                Employer:currentForm.Employer,
-                                                                companyName:currentForm.companyName,
-                                                                jobDescription:currentForm.jobDescription,
-        }).then(() => {
+
+    
+    
+ Axios.post("http://localhost:3001/insertApplication",{  applicantName:applicantName, 
+            phoneNumber:phoneNumber,
+            email:email,
+            applicantDescription:applicantDescription,
+            yearsExperience:yearsExperience,
+            location:location,
+            Applicant:Applicant,
+            Employer:currentForm.Employer,
+            companyName:currentForm.companyName,
+            jobDescription:currentForm.jobDescription,
+            //instantiate file value
+        }
+        ).then(() => {
             alert("Application successfully submitted!");
         });
         setCurrentTab("ApplicantFindPage")
     }
 
+    
     
 
     const handleApplicantName = (e) => {
@@ -63,6 +74,8 @@ export const Application = ({currentForm, setCurrentTab}) => {
         setYearsExperience(e.target.value);
         
     }
+
+       
 
   return (
     <div className='postingform section__padding'>
@@ -93,12 +106,20 @@ export const Application = ({currentForm, setCurrentTab}) => {
                     <label>Location</label>
                     <input placeholder="Location" value={location} onChange={handleLocation}></input>
                 </div>
+                <div className='postingform-content__input-location'>
+                    <label>Add a file</label>
+                    {/* map file value here */}
+                    <input type='file' placeholder="Add a file"></input>
+                </div>
+
                 <div className='postingform-content__input-button'>
                     <button onClick={createApplication}> Add </button>
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
   )
-}
-export default Application
+};
+
+
+export default Application;
