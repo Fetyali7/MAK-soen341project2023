@@ -30,7 +30,7 @@ The login credentials for this system are under high security and nobody will ha
 ## Project Approach and Technology
 | Front-end | Back-end | Database |
 | :-: | :-: | :-: |
-|React|Django|SQL|
+|React|Node.JS|SQL|
 
 ## Team Members
 | Names | Id | Git Username | Role |
