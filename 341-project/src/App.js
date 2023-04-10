@@ -8,7 +8,7 @@ import ApplicantFindPage from './Component/findingPage-applicant/ApplicantFindPa
 import EmployerInbox from './Component/EmployerInbox/EmployerInbox';
 import ApplicantInbox from './Component/ApplicantInbox/ApplicantInbox';
 import SubmittedApplications from './Component/SubmittedApplications/SubmittedApplications';
-
+import Profile from './Component/Profile/Profile';
 /*import {Findingpage} from './Component/Findingpage';
 import { Footer } from './Component/Footer';
 import {Homepage} from './Component/Homepage';
@@ -46,6 +46,7 @@ function App() {
         {currentTab === "EmployerInbox" ? <EmployerInbox loginList={loginList}></EmployerInbox> : <></>}
         {currentTab === "EditForm" ? <EditForm currentForm={currentForm} setCurrentTab={setCurrentTab}></EditForm> : <></>}
         {currentTab === "Aboutpage" ? <Aboutpage></Aboutpage> : <></>}
+        {currentTab === "Profile" ? <Profile loginList={loginList}></Profile> : <></>}
         <Footer></Footer>
     </div>
   );
