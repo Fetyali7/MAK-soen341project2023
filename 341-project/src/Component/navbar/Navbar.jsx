@@ -9,8 +9,6 @@ import './navbar.css'
 export const Navbar = ({ changeTab }) => {
   const [LoginList, setLoginList] = useState([]);
 
-
-
   useEffect(() => {
     Axios.get("http://localhost:3001/UserLogin").then((response) => {
         setLoginList(response.data);
@@ -112,7 +110,7 @@ export const Navbar = ({ changeTab }) => {
         {LoginList.map((user,index) => { 
         if((user.apliemp === "Employer") || (user.apliemp ==="Applicant")){
           return(
-            <a>{user.username}</a>
+            <a onClick={() => { changeTab("Profile") }}>{user.username}</a>
           );
          }
         })}
