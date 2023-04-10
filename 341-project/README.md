@@ -73,3 +73,16 @@ npm run devStart\
 |jobDescription|VARCHAR(45)|X|Y|X| |
 |Employer|VARCHAR(45)|X| Y |X| |
 |Applicant|VARCHAR(45)|X| Y |X| |
+
+## profile
+|Column Name | DataType | PK | NN | AI | Default/Expression |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+|idProfile| INT | Y | Y | Y | |
+|fullName|VARCHAR(45)|X| X | X | |
+|phoneNumber|VARCHAR(45)|X|X|X| |
+|email|VARCHAR(45)|X| X |X| |
+|intro|VARCHAR(45)|X| X |X| |
+|yrsExp|VARCHAR(45)|X| X |X| |
+|location|VARCHAR(45)|X| X |X| |
+|username|VARCHAR(45)|X| Y |X| |
+

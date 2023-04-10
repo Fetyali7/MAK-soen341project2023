@@ -40,6 +40,12 @@ export const Signup = ( {changeTab} ) => {
                                                             email:email,
                                                             apliemp:apliemp,
         }).then(() => {
+            Axios.post("http://localhost:3001/Profile", {
+                username:username,
+                email:email,
+            }).then (() => {
+                console.log("a")
+            })
             setError("");
             alert("You have successfully signed up!");
             changeTab("Login");

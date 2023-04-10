@@ -44,6 +44,46 @@ app.post("/insertUserLogin", (req,res) => {
         }
     });
 });
+//Profile
+app.post("/Profile", (req,res) => {
+    const username = req.body.username;
+    const email = req.body.email;
+
+    const sqlInsert = "INSERT INTO profile (username, email) VALUES (?,?)";
+    db.query(sqlInsert, [username, email], (err, result) => {
+        if(err) {
+            console.log(err);
+        } else {
+            res.send("Values inserted");
+        }
+    });
+});
+app.get("/getProfile", (req, res) => {
+    const sqlSelect = "SELECT * FROM profile";
+    db.query(sqlSelect, (err, result) => {
+        res.send(result);
+    })
+})
+app.put("/editProfile", (req, res) => {
+    const applicantName = req.body.applicantName;
+    const phoneNumber = req.body.phoneNumber;
+    const email = req.body.email;
+    const applicantDescription = req.body.applicantDescription;
+    const yearsExperience = req.body.yearsExperience;
+    const location = req.body.location;
+
+    const sqlEdit =  "UPDATE profile SET fullName = ?, phoneNumber = ?, intro = ?, yrsExp = ?, location = ? WHERE email = ?";
+
+    db.query(sqlEdit, [applicantName, phoneNumber, applicantDescription, yearsExperience, location, email], (err, result) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send(result);
+        }
+      }
+    );
+  });
+
 app.delete("/deleteUserLogin/:idUserLogin", (req, res) => {
     const id = req.params.idUserLogin;
     const sqlDelete = "DELETE from UserLogin WHERE idUserLogin = ?";
