@@ -8,6 +8,7 @@ export const ApplicantFindPage= ({ changeTab, setCurrentForm }) => {
   const [jobList, setJobList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
 
+    // Fetch job postings data from API when component mounts
     useEffect(() => {
         Axios.get("http://localhost:3001/JobPostings").then((response) => {
             setJobList(response.data);
@@ -15,13 +16,16 @@ export const ApplicantFindPage= ({ changeTab, setCurrentForm }) => {
         });
     }, []);
 
+  //Handle seartch input change
   const handleSearch = (e) => {
     console.log(e.target.value)
     setSearch(e.target.value);
   }
+
   const handleSortCompany = () => {
     handleFilterName();
   }
+  
   const handleSortPosition = () => {
     handleFilterPosition();
   }
@@ -47,7 +51,7 @@ export const ApplicantFindPage= ({ changeTab, setCurrentForm }) => {
     setCurrentForm(e);
   }
 
-
+  // Render applicant find page!
   return (
     <div className='findingpage section__padding'>
       <div className='findingpage-search'>
