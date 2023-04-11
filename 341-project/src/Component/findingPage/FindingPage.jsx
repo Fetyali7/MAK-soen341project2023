@@ -16,9 +16,6 @@ export const Findingpage= ({ changeTab, setCurrentForm, loginList }) => {
   }, []);
 
   const handleSearch = (e) => {
-    // if(e.target.value === "") {
-    //   setFilteredList(jobList);
-    // }
     console.log(e.target.value)
     setSearch(e.target.value);
   }

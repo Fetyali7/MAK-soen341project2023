@@ -3,10 +3,8 @@ import Axios from 'axios';
 import './ApplicantFindPage.css'
 
 export const ApplicantFindPage= ({ changeTab, setCurrentForm }) => {
-//   const [sortCompany, setSortCompany] = useState("");
-//   const [sortPosition, setSortPosition] = useState("");
-  const [search, setSearch] = useState("");
 
+  const [search, setSearch] = useState("");
   const [jobList, setJobList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
 
@@ -18,20 +16,13 @@ export const ApplicantFindPage= ({ changeTab, setCurrentForm }) => {
     }, []);
 
   const handleSearch = (e) => {
-    // if(e.target.value === "") {
-    //   setFilteredList(jobList);
-    // }
     console.log(e.target.value)
     setSearch(e.target.value);
   }
   const handleSortCompany = () => {
-    // setSortPosition("")
-    //setSortCompany(search);
     handleFilterName();
   }
   const handleSortPosition = () => {
-    // setSortCompany("");
-    //setSortPosition(search);
     handleFilterPosition();
   }
 

@@ -23,20 +23,13 @@ export const EmployerInbox= ({ loginList }) => {
     }, []);
 
   const handleSearch = (e) => {
-    // if(e.target.value === "") {
-    //   setFilteredList(jobList);
-    // }
     console.log(e.target.value)
     setSearch(e.target.value);
   }
   const handleSortCompany = () => {
-    // setSortPosition("")
-    //setSortCompany(search);
     handleFilterName();
   }
   const handleSortPosition = () => {
-    // setSortCompany("");
-    //setSortPosition(search);
     handleFilterPosition();
   }
 

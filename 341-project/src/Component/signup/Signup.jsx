@@ -4,6 +4,7 @@ import './signup.css'
 import Application from '../Application/Application';
 
 export const Signup = ( {changeTab} ) => {
+    // Initialize state variables
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
@@ -12,22 +13,27 @@ export const Signup = ( {changeTab} ) => {
     const [apliemp, setApliEmp] = useState("");
     const [accounts, setAccounts] = useState([]);
 
+    // useEffect hook to get accounts data from server
     useEffect(() => {
         Axios.get("http://localhost:3001/userSu").then((response) => {
             setAccounts(response.data);
         });
     })
 
+    // Function to handle sign up button clock event
     const createUserSu = (event) => {
         event.preventDefault();
+        // Check for empty fields or incorrect password
         if(!checkInputs()){
             return;
         }
+        // Check if password matches
         if(!PasswordConfirm()) {
             setPassword("");
             setPassword2("");
             return;
         }
+        // Check if account already exists
         if(checkAccountExists()) {
             setUsername("");
             setPassword("");
@@ -35,11 +41,13 @@ export const Signup = ( {changeTab} ) => {
             setEmail("");
             return;
         }
+        // Create new user in database
         Axios.post("http://localhost:3001/insertUserSu", {  username:username, 
                                                             password:password,
                                                             email:email,
                                                             apliemp:apliemp,
         }).then(() => {
+            // Cfreate new profile for user in database
             Axios.post("http://localhost:3001/Profile", {
                 username:username,
                 email:email,
@@ -47,6 +55,7 @@ export const Signup = ( {changeTab} ) => {
                 console.log("a")
             })
             setError("");
+            // Show success message and change tab to login
             alert("You have successfully signed up!");
             changeTab("Login");
         });

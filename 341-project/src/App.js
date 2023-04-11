@@ -1,3 +1,4 @@
+//Importing necessay modules and components
 import { useState, useEffect } from 'react';
 import './App.css';
 import Axios from 'axios';
@@ -9,19 +10,16 @@ import EmployerInbox from './Component/EmployerInbox/EmployerInbox';
 import ApplicantInbox from './Component/ApplicantInbox/ApplicantInbox';
 import SubmittedApplications from './Component/SubmittedApplications/SubmittedApplications';
 import Profile from './Component/Profile/Profile';
-/*import {Findingpage} from './Component/Findingpage';
-import { Footer } from './Component/Footer';
-import {Homepage} from './Component/Homepage';
-import { Navbar } from './Component/Navbar';
-import { PostingForm } from './Component/PostingForm';
-import { Signup } from './Component/Signup';*/
 
+// App component
 function App() {
+  // Setting up state variables using useState hook
   const [postingsList, setPostingsList] = useState([]);
   const [loginList, setLoginList] = useState([]);
   const [currentTab, setCurrentTab] = useState("Home");
   const [currentForm, setCurrentForm] = useState([]);
   
+  // Fetching data from the server using Axios and useEffect hook
   useEffect(() => {
     Axios.get("http://localhost:3001/UserLogin").then((response) => {
       if(response.data == null) {
@@ -31,6 +29,7 @@ function App() {
     });
   }, []);
   
+  // Rendering the componenets based on the currentTab state
   return (
     <div className="App">
         <Navbar changeTab={(changeTab) => setCurrentTab(changeTab)}></Navbar>
