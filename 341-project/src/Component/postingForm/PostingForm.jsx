@@ -3,6 +3,7 @@ import Axios from 'axios';
 import './postingForm.css'
 
 export const PostingForm = ({postingsList, setPostingsList}) => {
+    // Initiate variables
     const [companyName, setCompanyName] = useState("")
     const [phoneNumber, setPhoneNumber] = useState("")
     const [employerName, setEmployerName] = useState("")
@@ -11,6 +12,7 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
     const [loginList, setLoginList] = useState([])
     const [Employer, setEmployer] = useState("")
     
+    // useEffect hook to fetch user login data from API endpoint
     useEffect(() => {
         Axios.get("http://localhost:3001/UserLogin").then((response) => {
             setLoginList(response.data);
@@ -19,6 +21,7 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
         });
       }, []);
 
+    // Function to create a new job posting
     const createPosting = () => {
         Axios.post("http://localhost:3001/insertJobPosting", {  companyName:companyName, 
                                                                 phoneNumber:phoneNumber,
@@ -27,12 +30,13 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
                                                                 location:location,
                                                                 Employer:Employer,
         }).then(() => {
+            //Display a success message when the new job posting is create
             alert("Sucess");
         });
     }
 
     
-
+    // Function to update the state variable for company name
     const handleCompanyName = (e) => {
         setCompanyName(e.target.value);
     }
