@@ -2,14 +2,8 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Axios from 'axios';
-import { Findingpage, Footer, Homepage, Navbar, PostingForm, Signup, Login, Aboutpage} from './Component'
-import EditForm from './Component/findingPage/EditForm';
-import Application from './Component/Application/Application';
-import ApplicantFindPage from './Component/findingPage-applicant/ApplicantFindPage';
-import EmployerInbox from './Component/EmployerInbox/EmployerInbox';
-import ApplicantInbox from './Component/ApplicantInbox/ApplicantInbox';
-import SubmittedApplications from './Component/SubmittedApplications/SubmittedApplications';
-import Profile from './Component/Profile/Profile';
+import { Findingpage, Footer, Homepage, Navbar, PostingForm, Signup, Login, Aboutpage, EditForm, Application, ApplicantFindPage, EmployerInbox, ApplicantInbox, SubmittedApplications, Profile} from './Component'
+
 
 // App component
 function App() {
