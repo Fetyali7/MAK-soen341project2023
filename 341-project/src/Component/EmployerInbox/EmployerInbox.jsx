@@ -7,7 +7,7 @@ export const EmployerInbox= ({ loginList }) => {
 
   const [ApplicantsList, setApplicantsList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
-  const [jobList, setJobList] = useState([]);
+  const [setJobList] = useState([]);
 
     useEffect(() => {
         Axios.get("http://localhost:3001/Applications").then((response) => {
@@ -72,7 +72,7 @@ export const EmployerInbox= ({ loginList }) => {
       <div className='findingpage-listing'>
         {ApplicantsList.length > 0 ? (
           <div> {filteredList.reverse().map((value) => (
-            <div>
+            <div key={value.idApplications.id}>
             {value.Employer === (loginList.find(user => user.username)).username &&
             <React.Fragment>
             <div className='findingcard'>

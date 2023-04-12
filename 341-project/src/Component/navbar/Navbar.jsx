@@ -35,7 +35,7 @@ export const Navbar = ({ changeTab }) => {
       <img src={logo} alt="JobHunt LOGO"/>
       <div class="topnav ">
         <a href="#Home" class="active" onClick={() => { changeTab("Home") }}>JobHunt</a>
-        //* Render Jobs link only for employer users */
+        {/* Render Jobs link only for employer users */}
         {LoginList.map((user,index) => { 
           if(user.apliemp === "Employer"){
             return(

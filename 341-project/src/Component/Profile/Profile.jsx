@@ -25,16 +25,12 @@ export const Profile = ({loginList}) => {
     const [applicantDescription, setApplicantDescription] = useState("")
     const [location, setLocation] = useState("")
     const [yearsExperience, setYearsExperience] = useState("")
-    const [Applicant, setApplicant] = useState("")
+    
     const handleApplicantName = (e) => {
         setApplicantName(e.target.value);
     }
     const handlePhoneNumber = (e) => {
         setPhoneNumber(e.target.value);
-        
-    }
-    const handleEmail = (e) => {
-        setEmail(e.target.value);
         
     }
     const handleApplicantDescription = (e) => {

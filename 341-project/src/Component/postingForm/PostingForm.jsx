@@ -9,7 +9,7 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
     const [employerName, setEmployerName] = useState("")
     const [jobDescription, setJobDescription] = useState("")
     const [location, setLocation] = useState("")
-    const [loginList, setLoginList] = useState([])
+    const [setLoginList] = useState([])
     const [Employer, setEmployer] = useState("")
     
     // useEffect hook to fetch user login data from API endpoint
@@ -56,12 +56,6 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
         setLocation(e.target.value);
         
     }
-    const handlePostings = () =>  {
-        setPostingsList([...postingsList, {companyName:companyName, phoneNumber:phoneNumber,
-                                         employerName:employerName,jobDescription:jobDescription,
-                                         location:location, Employer:Employer}]);
-        console.log(postingsList);
-    }
 
   return (
     <div className='postingform section__padding'>
@@ -96,12 +90,14 @@ export const PostingForm = ({postingsList, setPostingsList}) => {
             {postingsList.length > 0 ? 
             <div>
                     {postingsList.map((value) => 
-                    <div className='postingcard'>
-                        <div className='postingcard-companyname'>Company: {value.companyName}</div>
-                        <div className='postingcard-phonenumber'>Phone: {value.phoneNumber}</div>
-                        <div className='postingcard-employer'>Employer: {value.employer}</div>
-                        <div className='postingcard-jobdescription'>Description: {value.jobDescription}</div>
-                        <div className='postingcard-location'>Location: {value.location}</div>
+                    <div key={value.idjobpostings.id}>
+                        <div className='postingcard'>
+                            <div className='postingcard-companyname'>Company: {value.companyName}</div>
+                            <div className='postingcard-phonenumber'>Phone: {value.phoneNumber}</div>
+                            <div className='postingcard-employer'>Employer: {value.employer}</div>
+                            <div className='postingcard-jobdescription'>Description: {value.jobDescription}</div>
+                            <div className='postingcard-location'>Location: {value.location}</div>
+                        </div>
                     </div>)
                     }
             </div>

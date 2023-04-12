@@ -72,7 +72,7 @@ export const SubmittedApplications= ({ changeTab, setCurrentForm }) => {
           <h1>You Have Applied To The Following Companies:</h1>
         {ApplicantList.length > 0 ? (
           <div> {filteredList.reverse().map((value) => (
-            <div>
+            <div key={value.idApplications.id}>
             {value.Applicant === loginusername &&
             <React.Fragment>
             <div className='findingcard'>

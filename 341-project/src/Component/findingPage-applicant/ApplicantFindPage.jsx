@@ -63,13 +63,15 @@ export const ApplicantFindPage= ({ changeTab, setCurrentForm }) => {
       <div className='findingpage-listing'>
         {jobList.length > 0 ? (
           <div> {filteredList.reverse().map((value) => 
-            <div className='findingcard'>
-              <div className='findingcard-companyname'>Company: {value.companyName}</div>
-              <div className='findingcard-phonenumber'>Phone Number: {value.phoneNumber}</div>
-              <div className='findingcard-jobdescription'>Employer Name: {value.employerName}</div>
-              <div className='findingcard-jobdescription'>Description: {value.jobDescription}</div>
-              <div className='findingcard-location'>Location: {value.location}</div>
-              <button name="delBut" onClick={() => {Apply(value)}}> Apply</button>
+            <div key={value.idjobpostings.id}>
+              <div className='findingcard'>
+                <div className='findingcard-companyname'>Company: {value.companyName}</div>
+                <div className='findingcard-phonenumber'>Phone Number: {value.phoneNumber}</div>
+                <div className='findingcard-jobdescription'>Employer Name: {value.employerName}</div>
+                <div className='findingcard-jobdescription'>Description: {value.jobDescription}</div>
+                <div className='findingcard-location'>Location: {value.location}</div>
+                <button name="delBut" onClick={() => {Apply(value)}}> Apply</button>
+              </div>
             </div>
           )}
           </div>
