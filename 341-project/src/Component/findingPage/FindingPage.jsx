@@ -63,6 +63,7 @@ export const Findingpage= ({ changeTab, setCurrentForm, loginList }) => {
       <div className='findingpage-listing'>
         {jobList.length > 0 ? (
           <div> {filteredList.reverse().map((value) => 
+            <div key={value.idjobpostings.id}>
             <div className='findingcard'>
               <div className='findingcard-companyname'>Company: {value.companyName}</div>
               <div className='findingcard-phonenumber'>Phone Number: {value.phoneNumber}</div>
@@ -75,6 +76,7 @@ export const Findingpage= ({ changeTab, setCurrentForm, loginList }) => {
               <button name="delBut" onClick={() => {deleteJobPosting(value.idJobPostings); window.location.reload(true); window.location = '341-project/src/Component/findingPage/FindingPage.jsx'}}> Delete </button>
               </React.Fragment>
               }
+            </div>
             </div>
           )}
           </div>

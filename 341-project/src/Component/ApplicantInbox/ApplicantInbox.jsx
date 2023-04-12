@@ -67,7 +67,7 @@ export const ApplicantInbox= ({ currentForm, setCurrentTab }) => {
       <div className='findingpage-listing'>
         {InterviewsList.length > 0 ? (
           <div> {filteredList.reverse().map((value) => (
-            <div>
+            <div key={value.idInterviews.id}>
             {value.Applicant === loginusername &&
             <React.Fragment>
             <div className='findingcard'>
