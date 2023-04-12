@@ -3,42 +3,38 @@ import Axios from 'axios';
 import './ApplicantInbox.css'
 
 export const ApplicantInbox= ({ currentForm, setCurrentTab }) => {
-//   const [sortCompany, setSortCompany] = useState("");
-//   const [sortPosition, setSortPosition] = useState("");
-  const [search, setSearch] = useState("");
-  // const [loginList, setLoginList] = useState([]);
 
+  const [search, setSearch] = useState("");
   const [InterviewsList, setInterviewsList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [loginusername, setLoginUsername] = useState("");
 
+
+    // Fetches data from the Interviews API and sets the state for InterviewsList and filteredList
     useEffect(() => {
         Axios.get("http://localhost:3001/Interviews").then((response) => {
             setInterviewsList(response.data);
             setFilteredList(response.data);
         });
     }, []);
+
+    // Fetches data from the UserLogin API and sets the state for loginusername
     useEffect(() => {
         Axios.get("http://localhost:3001/UserLogin").then((response) => {
             setLoginUsername(response.data.find(user => user.username).username);
         });
       }, []);
 
+  // Updates the search state when the user types into the search bar
   const handleSearch = (e) => {
-    // if(e.target.value === "") {
-    //   setFilteredList(jobList);
-    // }
     console.log(e.target.value)
     setSearch(e.target.value);
   }
+
   const handleSortCompany = () => {
-    // setSortPosition("")
-    //setSortCompany(search);
     handleFilterName();
   }
   const handleSortPosition = () => {
-    // setSortCompany("");
-    //setSortPosition(search);
     handleFilterPosition();
   }
 

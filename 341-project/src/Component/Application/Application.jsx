@@ -9,13 +9,11 @@ export const Application = ({currentForm, setCurrentTab}) => {
     const [applicantDescription, setApplicantDescription] = useState("")
     const [location, setLocation] = useState("")
     const [yearsExperience, setYearsExperience] = useState("")
-    // const [loginList, setLoginList] = useState([])
     const [Applicant, setApplicant] = useState("")
-    // const [Employer, setEmployer] = useState(currentForm.Employer)
     
     useEffect(() => {
         Axios.get("http://localhost:3001/UserLogin").then((response) => {
-            // setLoginList(response.data);
+
             const loginUser = response.data.find(user => user.username);
             setApplicant(loginUser.username);
         });

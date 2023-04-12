@@ -3,13 +3,12 @@ import Axios from 'axios';
 import './ApplicantFindPage.css'
 
 export const ApplicantFindPage= ({ changeTab, setCurrentForm }) => {
-//   const [sortCompany, setSortCompany] = useState("");
-//   const [sortPosition, setSortPosition] = useState("");
-  const [search, setSearch] = useState("");
 
+  const [search, setSearch] = useState("");
   const [jobList, setJobList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
 
+    // Fetch job postings data from API when component mounts
     useEffect(() => {
         Axios.get("http://localhost:3001/JobPostings").then((response) => {
             setJobList(response.data);
@@ -17,21 +16,17 @@ export const ApplicantFindPage= ({ changeTab, setCurrentForm }) => {
         });
     }, []);
 
+  //Handle seartch input change
   const handleSearch = (e) => {
-    // if(e.target.value === "") {
-    //   setFilteredList(jobList);
-    // }
     console.log(e.target.value)
     setSearch(e.target.value);
   }
+
   const handleSortCompany = () => {
-    // setSortPosition("")
-    //setSortCompany(search);
     handleFilterName();
   }
+  
   const handleSortPosition = () => {
-    // setSortCompany("");
-    //setSortPosition(search);
     handleFilterPosition();
   }
 
@@ -56,7 +51,7 @@ export const ApplicantFindPage= ({ changeTab, setCurrentForm }) => {
     setCurrentForm(e);
   }
 
-
+  // Render applicant find page!
   return (
     <div className='findingpage section__padding'>
       <div className='findingpage-search'>

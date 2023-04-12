@@ -7,35 +7,35 @@ import './navbar.css'
 
 
 export const Navbar = ({ changeTab }) => {
+
+  // Define state to hold the user login list
   const [LoginList, setLoginList] = useState([]);
 
+  // Fetch user login list from the server when the componenet mounts
   useEffect(() => {
     Axios.get("http://localhost:3001/UserLogin").then((response) => {
         setLoginList(response.data);
     });
   }, []);
 
+  // Function to delete user login from the server and log out the user
   const deleteUserLogin = (idUserLogin) => {
     Axios.delete(`http://localhost:3001/deleteUserLogin/${idUserLogin}`);
     alert("You have successfully logged out!");
-    window.location.reload();
+    window.location.reload(); // Reload the page after loggin out
     console.log(idUserLogin)
   }
 
   
   return (
-    // <div className='navbar'>
-    //     <h1 className='navTitle' onClick={()=> {changeTab("Home")}}>JobHunt</h1>
-    //     <div className='navItem' onClick={()=> {changeTab("Posting")}}>Jobpost</div>
-    //     <div className='navItem' onClick={()=> {changeTab("Contact")}}>Contact</div>
-    //     <div className='navItem' onClick={()=> {changeTab("Help")}}>Help</div>        
-    // </div>
+
     
     <div className='Navbar__Background'>
 
       <img src={logo} alt="JobHunt LOGO"/>
       <div class="topnav ">
         <a href="#Home" class="active" onClick={() => { changeTab("Home") }}>JobHunt</a>
+        //* Render Jobs link only for employer users */
         {LoginList.map((user,index) => { 
           if(user.apliemp === "Employer"){
             return(
