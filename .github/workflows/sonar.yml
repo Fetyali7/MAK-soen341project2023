@@ -20,4 +20,4 @@ jobs:
         with:
           args: >
             -Dsonar.organization=fetyali7
-            -Dsonar.projectKey=MAK-soen341project2023
+            -Dsonar.projectKey=Fetyali7_MAK-soen341project2023
