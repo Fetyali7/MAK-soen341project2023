@@ -46,7 +46,7 @@ export const Login = ({ changeTab, setlogin}) => {
         }
         else{
             // Alert the user if login fails and reset the password field
-            alert.alert("Please try again!");
+            alert("Please try again!!!");
             setPass1("");
         }
         
